@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAD数字化制版 | JANBAN STUDIO</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --text: #1D1D1F;
+    --text-secondary: #86868B;
+    --blue: #0071E3;
+    --bg: #fff;
+    --bg-alt: #F5F5F7;
+    --bg-dark: #000;
+    --bg-light-blue: #dceefc;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 999;
+}
+.nav-container {
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text);
+    text-decoration: none;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+.nav-links a {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: 0.2s;
+}
+.nav-links a:hover {
+    color: var(--blue);
+}
+.nav-links a.active {
+    color: var(--blue);
+    font-weight: 500;
+}
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.title {
+    font-size: 56px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+.subtitle {
+    font-size: 24px;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-bottom: 32px;
+}
+.desc {
+    max-width: 800px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    text-align: left;
+}
+.buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+}
+.btn {
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.btn-primary {
+    background: var(--blue);
+    color: #fff;
+}
+.btn-primary:hover {
+    background: #0077ED;
+}
+footer {
+    background: var(--bg-alt);
+    padding: 50px 20px 30px;
+    text-align: center;
+    border-top: 1px solid #E6E6E6;
+}
+footer p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+.copyright {
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #E6E6E6;
+}
+@media (max-width:768px) {
+    .title { font-size: 36px; }
+    .subtitle { font-size: 19px; }
+    .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">JANBAN</a>
+        <div class="nav-links">
+            <a href="index.html">首页</a>
+            <a href="service-cad.html" class="active">CAD制版</a>
+            <a href="contact.html">联系我们</a>
+        </div>
+    </div>
+</div>
+<section class="section">
+    <h1 class="title">CAD数字化制版</h1>
+    <p class="subtitle">精准到0.1cm，专业纸样可直接量产</p>
+    <div class="desc">
+        <p>我们采用行业领先的服装CAD软件，将你的设计转化为精准的数字化纸样。从基础版型到复杂结构，我们都能确保每一条线、每一个省位都符合人体工学和生产要求。</p>
+        <br>
+        <p>• 支持DXF、AAMA等多种行业标准格式输出</p>
+        <p>• 提供放码、排料等全套技术文件</p>
+        <p>• 可直接对接工厂，大幅降低沟通成本和生产误差</p>
+    </div>
+    <div class="buttons">
+        <a href="contact.html" class="btn btn-primary">立即咨询</a>
+    </div>
+</section>
+<footer>
+    <p>长春市人民广场重庆路498号</p>
+    <p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
+    <div class="copyright">© 2026 JANBAN STUDIO 保留所有权利</div>
+</footer>
+</body>
+</html>
