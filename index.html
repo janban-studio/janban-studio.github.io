@@ -26,7 +26,6 @@ body {
     background: var(--bg);
     -webkit-font-smoothing: antialiased;
 }
-
 .navbar {
     position: fixed;
     top: 0;
@@ -70,7 +69,6 @@ body {
     color: var(--blue);
     font-weight: 500;
 }
-
 .section {
     min-height: 100vh;
     display: flex;
@@ -82,14 +80,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-.section--dark {
-    background: var(--bg-dark);
-    color: #fff;
-}
-.section--light-blue {
-    background: var(--bg-light-blue);
-}
-
 .title {
     font-size: 56px;
     font-weight: 600;
@@ -97,9 +87,6 @@ body {
     opacity: 0;
     transform: translateY(20px);
     transition: 0.8s;
-}
-.section--dark .title {
-    color: #fff;
 }
 .subtitle {
     font-size: 24px;
@@ -110,27 +97,11 @@ body {
     transform: translateY(20px);
     transition: 0.8s 0.2s;
 }
-.section--dark .subtitle {
-    color: #a1a1a1;
-}
-.desc {
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    max-width: 800px;
-    margin-bottom: 24px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s 0.3s;
-}
-.section--dark .desc {
-    color: #a1a1a1;
-}
 .img-box {
     max-width: 80%;
     max-height: 60vh;
     opacity: 0;
-    transform: scale(0.9) translateY(20px);
+    transform: scale(0.9);
     transition: 0.8s 0.4s;
 }
 .img-box img {
@@ -154,39 +125,22 @@ body {
     font-size: 17px;
     font-weight: 500;
     text-decoration: none;
-    transition: 0.2s;
 }
 .btn-primary {
     background: var(--blue);
     color: #fff;
 }
-.btn-primary:hover {
-    background: #0077ED;
-}
 .btn-outline {
     border: 1px solid var(--blue);
     color: var(--blue);
 }
-.btn-outline:hover {
-    background: #f0f7ff;
-}
-.section--dark .btn-outline {
-    border-color: #fff;
-    color: #fff;
-}
-.section--dark .btn-outline:hover {
-    background: rgba(255,255,255,0.1);
-}
-
 .visible .title,
 .visible .subtitle,
-.visible .desc,
-.visible .buttons,
-.visible .img-box {
+.visible .img-box,
+.visible .buttons {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
-
 footer {
     background: var(--bg-alt);
     padding: 50px 20px 30px;
@@ -204,7 +158,6 @@ footer p {
     padding-top: 20px;
     border-top: 1px solid #E6E6E6;
 }
-
 @media (max-width:768px) {
     .title { font-size: 36px; }
     .subtitle { font-size: 19px; }
@@ -214,27 +167,27 @@ footer p {
 </style>
 </head>
 <body>
-
 <div class="navbar">
 <div class="nav-container">
     <a href="index.html" class="logo">JANBAN</a>
     <div class="nav-links">
         <a href="index.html" class="active">首页</a>
-        <a href="services.html">服务</a>
         <a href="cases.html">案例</a>
         <a href="process.html">流程</a>
-        <a href="advantage.html">优势</a>
+        <a href="service-cad.html">CAD制版</a>
+        <a href="service-cloth.html">来图来样</a>
+        <a href="service-optimize.html">版型优化</a>
+        <a href="service-sample.html">样衣制作</a>
         <a href="contact.html">联系我们</a>
     </div>
 </div>
 </div>
 
-<!-- 1 主视觉 -->
 <section class="section">
-    <h1 class="title">一件好衣服<br>从版型开始</h1>
+    <h1 class="title">一件好衣服 从版型开始</h1>
     <p class="subtitle">高端服装CAD制版｜来图来样｜版型优化｜样衣制作</p>
     <div class="img-box">
-        <img src="1.png" alt="制版工作台">
+        <img src="1.png" alt="制版">
     </div>
     <div class="buttons">
         <a href="contact.html" class="btn btn-primary">立即咨询</a>
@@ -242,93 +195,36 @@ footer p {
     </div>
 </section>
 
-<!-- 2 CAD制版 -->
 <section class="section">
     <h2 class="title">CAD数字化制版</h2>
-    <p class="subtitle">精准到0.1cm<br>专业纸样 可直接量产</p>
+    <p class="subtitle">精准到0.1cm 专业纸样可直接量产</p>
     <div class="img-box">
         <img src="2.png" alt="CAD制版">
     </div>
     <div class="buttons">
-        <a href="services.html" class="btn btn-primary">了解服务</a>
-        <a href="contact.html" class="btn btn-outline">定制制版</a>
+        <a href="service-cad.html" class="btn btn-primary">了解服务</a>
     </div>
 </section>
 
-<!-- 3 来图来样 -->
-<section class="section section--light-blue">
+<section class="section">
     <h2 class="title">来图来样打版</h2>
-    <p class="subtitle">图片｜样衣｜手稿｜参考款<br>1:1精准结构还原</p>
+    <p class="subtitle">图片｜样衣｜手稿 1:1精准还原</p>
     <div class="img-box">
         <img src="3.png" alt="来图打版">
     </div>
     <div class="buttons">
-        <a href="services.html" class="btn btn-primary">了解流程</a>
-        <a href="contact.html" class="btn btn-outline">来图打版</a>
+        <a href="service-cloth.html" class="btn btn-primary">了解服务</a>
     </div>
 </section>
 
-<!-- 4 我们的优势 -->
-<section class="section">
-    <h2 class="title">我们的优势</h2>
-    <p class="subtitle">十年经验·一对一服务·快速交付·量产级标准</p>
-    <div class="img-box">
-        <img src="4.png" alt="专业团队">
-    </div>
-    <div class="buttons">
-        <a href="advantage.html" class="btn btn-primary">了解优势</a>
-    </div>
-</section>
-
-<!-- 5 样衣制作 -->
 <section class="section">
     <h2 class="title">样衣制作</h2>
-    <p class="subtitle">纸样验证·试穿调整·拍摄样衣<br>一站式落地</p>
+    <p class="subtitle">纸样验证·试穿调整·拍摄样衣</p>
     <div class="img-box">
-        <img src="https://images.unsplash.com/photo-1591085769635-31db96261317" alt="样衣制作">
+        <img src="4.png" alt="样衣">
     </div>
     <div class="buttons">
-        <a href="services.html" class="btn btn-primary">查看工艺</a>
-        <a href="contact.html" class="btn btn-outline">制作样衣</a>
-    </div>
-</section>
-
-<!-- 6 全品类 -->
-<section class="section section--light-blue">
-    <h2 class="title">全品类覆盖</h2>
-    <p class="subtitle">女装·男装·新中式·工装·羽绒·针织·连衣裙·西装</p>
-    <div class="img-box">
-        <img src="https://images.unsplash.com/photo-1623009925431-537d96d56124" alt="全品类服装">
-    </div>
-    <div class="buttons">
-        <a href="cases.html" class="btn btn-primary">查看案例</a>
-    </div>
-</section>
-
-<!-- 7 案例 -->
-<section class="section section--dark">
-    <h2 class="title">精品案例</h2>
-    <p class="subtitle">上千款成功版型<br>只做能落地、能大货的专业纸样</p>
-    <div class="img-box">
-        <img src="https://images.unsplash.com/photo-1617103557195-d883e51d70b9" alt="服装案例">
-    </div>
-    <div class="buttons">
-        <a href="cases.html" class="btn btn-primary">全部案例</a>
-        <a href="contact.html" class="btn btn-outline">咨询同款</a>
-    </div>
-</section>
-
-<!-- 8 联系 -->
-<section class="section">
-    <h2 class="title">开始你的优质版型</h2>
-    <p class="subtitle">好版型，自带销量。</p>
-    <div class="desc">微信：JANBAN888　｜　邮箱：janban_studio@163.com</div>
-    <div class="img-box">
-        <img src="https://images.unsplash.com/photo-1591085769635-31db96261317" alt="联系我们">
-    </div>
-    <div class="buttons">
-        <a href="contact.html" class="btn btn-primary">立即咨询</a>
-        <a href="index.html" class="btn btn-outline">返回顶部</a>
+        <a href="service-sample.html" class="btn btn-primary">了解服务</a>
     </div>
 </section>
 
@@ -340,15 +236,10 @@ footer p {
 
 <script>
 const sections = document.querySelectorAll('.section');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.3 });
-sections.forEach(sec => observer.observe(sec));
+const ob = new IntersectionObserver(es=>{
+    es.forEach(e=>e.isIntersecting&&e.target.classList.add('visible'))
+},{threshold:0.3});
+sections.forEach(s=>ob.observe(s));
 </script>
-
 </body>
 </html>
