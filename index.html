@@ -3,58 +3,686 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JANBAN服装工作室 | 长春CAD打版接单</title>
+    <title>JANBAN Studio | 精准制版 · 匠心呈现</title>
+    <!-- 引入苹果San Francisco字体风格的无衬线字体 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: "Microsoft Yahei", sans-serif; background: #f8f8f8; color: #333; }
-        .wrapper { max-width: 900px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; padding: 30px 0; border-bottom: 3px solid #e64340; }
-        header h1 { font-size: 36px; color: #e64340; margin-bottom: 10px; }
-        header p { font-size: 18px; color: #666; }
-        .module { margin: 40px 0; background: white; padding: 25px; border-radius: 12px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
-        .module h2 { font-size: 24px; color: #333; margin-bottom: 20px; padding-left: 15px; border-left: 4px solid #e64340; }
-        .service-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; list-style: none; }
-        .service-list li { padding: 12px; background: #fefefe; border-radius: 8px; font-size: 16px; }
-        .cases img { width: 100%; border-radius: 8px; margin: 10px 0; }
-        .contact p { font-size: 18px; line-height: 2; margin: 10px 0; }
-        footer { text-align: center; padding: 20px 0; border-top: 1px solid #eee; color: #888; }
+        :root {
+            --color-text: #1D1D1F;
+            --color-text-secondary: #86868B;
+            --color-link: #06C;
+            --color-bg: #FFFFFF;
+            --color-bg-alt: #F5F5F7;
+            --color-border: #E6E6E6;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased; /* 苹果风格的字体抗锯齿 */
+        }
+
+        /* --- 导航栏 (苹果风格固定顶栏) --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px); /* 毛玻璃效果 */
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            height: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 18px;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-link);
+        }
+
+        .cta-button {
+            background-color: var(--color-link);
+            color: white !important;
+            padding: 6px 14px;
+            border-radius: 18px;
+            font-weight: 500;
+        }
+
+        .cta-button:hover {
+            background-color: #0071e3;
+        }
+
+        /* --- 主要内容区 --- */
+        main {
+            padding-top: 44px; /* 给固定导航栏留出空间 */
+        }
+
+        .section {
+            padding: 80px 0;
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- 英雄区 (Hero) --- */
+        .hero {
+            background-color: var(--color-bg-alt);
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero .tagline {
+            font-size: 24px;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .hero-buttons a {
+            font-size: 17px;
+            text-decoration: none;
+        }
+
+        .hero-img {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 900px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* --- 服务板块 (苹果风格的卡片矩阵) --- */
+        .services {
+            background-color: var(--color-bg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .section-header p {
+            font-size: 17px;
+            color: var(--color-text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--color-link);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--color-text-secondary);
+            font-size: 14px;
+        }
+
+        /* --- 案例展示 (全屏画廊) --- */
+        .showcase {
+            background-color: var(--color-bg-alt);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 400px;
+            position: relative;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.6));
+            color: white;
+        }
+
+        .gallery-caption h4 {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        /* --- 视频与工艺 --- */
+        .process {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .process-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .process-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .process-text p {
+            font-size: 17px;
+            color: var(--color-text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .video-wrapper {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- 团队介绍 --- */
+        .team {
+            background-color: var(--color-bg);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 16px;
+            border: 3px solid white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .team-member h4 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .team-member .role {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+        }
+
+        /* --- 联系表单 (苹果风格表单) --- */
+        .contact {
+            background-color: var(--color-bg-alt);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.2s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--color-link);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: var(--color-link);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #0071e3;
+        }
+
+        /* --- 页脚 (苹果风格) --- */
+        footer {
+            background-color: var(--color-bg-alt);
+            padding: 50px 0 30px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h5 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 8px;
+        }
+
+        .footer-column a {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+        }
+
+        .footer-column a:hover {
+            color: var(--color-link);
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            padding-top: 20px;
+            border-top: 1px solid var(--color-border);
+        }
+
+        /* --- 响应式适配 --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero .tagline {
+                font-size: 18px;
+            }
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none; /* 移动端通常隐藏导航，改用汉堡菜单，此处简化 */
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <header>
-            <h1>JANBAN服装工作室</h1>
-            <p>长春专业CAD服装打版 | 来图/来样 精准制版 小单可接</p>
-        </header>
 
-        <div class="module">
-            <h2>核心服务</h2>
-            <ul class="service-list">
-                <li>✅ 设计师手稿/效果图 来图制版</li>
-                <li>✅ 样衣复刻/改版 精准还原</li>
-                <li>✅ CAD标准纸样输出（可直接打印）</li>
-                <li>✅ 小单定制/工作室专属制版服务</li>
-                <li>✅ 尺寸精准校准（误差≤0.1cm）</li>
-                <li>✅ 高效交期，沟通顺畅</li>
-            </ul>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">JANBAN</a>
+            <div class="nav-links">
+                <a href="#services">服务</a>
+                <a href="#showcase">案例</a>
+                <a href="#process">工艺</a>
+                <a href="#team">团队</a>
+                <a href="#contact" class="cta-button">立即咨询</a>
+            </div>
         </div>
+    </nav>
 
-        <div class="module">
-            <h2>案例展示</h2>
-            <p>专业打版效果参考</p>
-            <img src="https://via.placeholder.com/850x450?text=CAD精准纸样案例" alt="CAD纸样案例">
-            <img src="https://via.placeholder.com/850x450?text=成衣落地效果案例" alt="成衣效果案例">
-        </div>
+    <main>
+        <!-- 英雄区 -->
+        <section class="hero section">
+            <div class="container">
+                <h1>精准制版，定义完美版型</h1>
+                <p class="tagline">融合前沿数字化技术与精湛手工工艺，为您打造兼具美感与实穿性的服装版型。</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="cta-button">预约打版</a>
+                    <a href="#services" style="color: var(--color-link);">了解服务 &gt;</a>
+                </div>
+                <img src="https://images.unsplash.com/photo-1584917897543-c23d29a50a975?q=80&w=1935&auto=format&fit=crop" alt="服装制版工艺图" class="hero-img">
+            </div>
+        </section>
 
-        <div class="module">
-            <h2>咨询对接</h2>
-            <p>📩 接单渠道：小红书/抖音 私信（JANBAN服装工作室）</p>
-            <p>📍 服务范围：长春本地及全国线上客户</p>
-            <p>💡 对接提示：请发送清晰款式图/样衣细节图，高效确定需求！</p>
-        </div>
-    </div>
+        <!-- 服务板块 -->
+        <section id="services" class="services section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>我们的服务</h2>
+                    <p>从设计图到量产，我们提供全链路的制版解决方案，满足您的不同需求。</p>
+                </div>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon">📐</div>
+                        <h3>CAD数字化制版</h3>
+                        <p>基于最新CAD软件，实现高效、精准的版型绘制与修改，支持一键推板。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🧵</div>
+                        <h3>来图来样打版</h3>
+                        <p>精准还原客户提供的设计图或样衣，严格把控尺寸与细节，还原设计精髓。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">✨</div>
+                        <h3>版型优化升级</h3>
+                        <p>针对现有版型进行舒适度、美观度优化，解决起翘、不服帖等工艺痛点。</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🧥</div>
+                        <h3>样衣制作</h3>
+                        <p>专业工艺师团队制作样衣，提供试穿反馈与调整建议，确保量产完美。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 案例展示 -->
+        <section id="showcase" class="showcase section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>精选案例</h2>
+                    <p>我们与众多品牌合作，涵盖高端定制、商业成衣与功能性服装，每一件作品都是匠心的体现。</p>
+                </div>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=1887&auto=format&fit=crop" alt="高级西装定制">
+                        <div class="gallery-caption">
+                            <h4>高级商务西装系列</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff1?q=80&w=1935&auto=format&fit=crop" alt="轻奢女装系列">
+                        <div class="gallery-caption">
+                            <h4>春夏轻奢女装系列</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1525450824786-227cbef70703?q=80&w=1935&auto=format&fit=crop" alt="户外功能服装">
+                        <div class="gallery-caption">
+                            <h4>专业户外功能服装</h4>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1594067598403-594932909209?q=80&w=1887&auto=format&fit=crop" alt="复古礼服定制">
+                        <div class="gallery-caption">
+                            <h4>高定复古礼服系列</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 工艺视频 -->
+        <section id="process" class="section" style="background-color: white;">
+            <div class="container">
+                <div class="process">
+                    <div class="process-text">
+                        <h3>看得见的精湛工艺</h3>
+                        <p>我们将数字化技术与传统工艺完美结合。从纸样的精准绘制，到面料的细致裁剪，再到样衣的手工缝制，每一个步骤都严格把控。</p>
+                        <p>观看下方视频，了解我们如何将一件设计图转化为完美的成衣。</p>
+                        <br>
+                        <a href="#contact" class="cta-button" style="text-decoration: none;">获取工艺手册</a>
+                    </div>
+                    <div class="video-wrapper">
+                        <iframe src="https://player.bilibili.com/player.html?bvid=BV1jt411o7cQ&page=1" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 团队介绍 -->
+        <section id="team" class="team section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>专业团队</h2>
+                    <p>我们的团队汇聚了行业资深制版师与工艺专家，平均拥有10年以上从业经验。</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="首席制版师">
+                        <h4>李素妍</h4>
+                        <p class="role">首席制版师 (韩籍)</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="工艺总监">
+                        <h4>张博文</h4>
+                        <p class="role">工艺技术总监</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="CAD专家">
+                        <h4>王佳琪</h4>
+                        <p class="role">CAD数字化专家</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="客户顾问">
+                        <h4>陈 明</h4>
+                        <p class="role">高级客户顾问</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系表单 -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>联系我们</h2>
+                    <p>无论您有任何疑问或需求，都可以填写下方表单，我们的专业团队将在24小时内与您联系。</p>
+                </div>
+                <div class="form-container">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">您的姓名</label>
+                            <input type="text" id="name" placeholder="请输入您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">联系电话</label>
+                            <input type="tel" id="phone" placeholder="请输入您的手机号码" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">服务类型</label>
+                            <select id="service" required>
+                                <option value="">请选择您需要的服务</option>
+                                <option value="cad">CAD数字化制版</option>
+                                <option value="sample">来图/来样打版</option>
+                                <option value="optimize">版型优化</option>
+                                <option value="other">其他需求</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">需求描述</label>
+                            <textarea id="message" placeholder="请详细描述您的需求，或上传参考图片链接..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">提交预约</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
     <footer>
-        <p>© 2026 JANBAN服装工作室 版权所有</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h5>关于我们</h5>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">发展历程</a></li>
+                        <li><a href="#">招贤纳士</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>服务中心</h5>
+                    <ul>
+                        <li><a href="#">服务流程</a></li>
+                        <li><a href="#">收费标准</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>案例中心</h5>
+                    <ul>
+                        <li><a href="#">女装系列</a></li>
+                        <li><a href="#">男装系列</a></li>
+                        <li><a href="#">童装系列</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h5>联系我们</h5>
+                    <ul>
+                        <li><a href="#">地址：长春市朝阳区XX创意园</a></li>
+                        <li><a href="tel:13800138000">电话：138-0013-8000</a></li>
+                        <li><a href="mailto:info@janban-studio.com">邮箱：info@janban-studio.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 JANBAN Studio. 保留所有权利。
+            </div>
+        </div>
     </footer>
+
 </body>
-</html>
+    </html>
