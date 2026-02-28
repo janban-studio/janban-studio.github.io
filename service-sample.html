@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>来图/来样打版 | JANBAN STUDIO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {--text:#1D1D1F;--text-secondary:#86868B;--blue:#0071E3;--bg:#fff;--bg-alt:#F5F5F7;--border:#E6E6E6;}
+        * {margin:0;padding:0;box-sizing:border-box;}
+        body {font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;}
+        .navbar {position:fixed;top:0;left:0;width:100%;height:44px;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);z-index:999;border-bottom:1px solid rgba(0,0,0,0.05);}
+        .nav-container {max-width:1280px;height:100%;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;}
+        .logo {font-weight:600;font-size:18px;color:var(--text);text-decoration:none;}
+        .nav-links {display:flex;gap:30px;}
+        .nav-links a {font-size:14px;color:var(--text-secondary);text-decoration:none;transition:0.2s;}
+        .nav-links a:hover {color:var(--blue);}
+        .cta-button {background:var(--blue);color:white !important;padding:6px 14px;border-radius:18px;font-weight:500;}
+        .cta-button:hover {background:#0077ED;}
+        main {padding-top:44px;}
+        .service-header {background:var(--bg-alt);padding:80px 0 60px;}
+        .container {max-width:1280px;margin:0 auto;padding:0 20px;}
+        .service-header h1 {font-size:48px;font-weight:600;margin-bottom:16px;}
+        .service-header p {font-size:20px;color:var(--text-secondary);max-width:800px;}
+        .service-content {padding:60px 0;}
+        .service-content h2 {font-size:32px;font-weight:600;margin-bottom:24px;color:var(--blue);}
+        .service-content p {font-size:17px;line-height:1.8;margin-bottom:20px;color:var(--text);}
+        .service-content img {width:100%;max-width:800px;border-radius:12px;margin:30px 0;}
+        .back-btn {display:inline-block;margin-top:20px;color:var(--blue);text-decoration:none;font-size:16px;}
+        footer {background:var(--bg-alt);padding:50px 0 30px;border-top:1px solid var(--border);margin-top:40px;}
+        .footer-info {text-align:center;font-size:14px;color:var(--text-secondary);}
+        .footer-info p {margin-bottom:8px;}
+        .footer-info a {color:var(--blue);text-decoration:none;}
+        .copyright {text-align:center;font-size:12px;color:var(--text-secondary);padding-top:20px;border-top:1px solid var(--border);margin-top:20px;}
+        @media (max-width:768px) {
+            .service-header h1 {font-size:36px;}
+            .nav-links {display:none;}
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">JANBAN</a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="cases.html">案例</a>
+                <a href="process.html">工艺</a>
+                <a href="contact.html" class="cta-button">立即咨询</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="service-header">
+            <div class="container">
+                <h1>来图/来样打版</h1>
+                <p>精准还原设计图的创意，复刻样衣的版型细节，为设计师和品牌解决“想法落地难”的核心问题</p>
+            </div>
+        </section>
+
+        <section class="service-content">
+            <div class="container">
+                <h2>服务范围</h2>
+                <p>✅ 设计图打版：高清效果图、手稿、参考图均可，支持标注尺寸或无标注还原；</p>
+                <p>✅ 样衣打版：实物样衣复刻、改款，保留原版优势并优化工艺缺陷；</p>
+                <p>✅ 小众品类：支持汉服、洛丽塔、工装、功能性服装等特殊品类的来图来样打版。</p>
+
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop" alt="来样打版工作图">
+
+                <h2>核心承诺</h2>
+                <p>1. <strong>1:1还原</strong>：从轮廓线条到细节结构，最大程度还原设计图或样衣的核心特征；</p>
+                <p>2. <strong>细节沟通</strong>：打版前确认面料弹力、穿着场景，避免“图好看穿不了”的问题；</p>
+                <p>3. <strong>免费小改</strong>：初稿完成后，支持2次以内的免费细节调整，确保符合预期。</p>
+
+                <a href="index.html#services" class="back-btn">← 返回服务列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
+                <p>地址：长春市人民广场重庆路498号</p>
+            </div>
+            <div class="copyright">
+                &copy; 2026 JANBAN STUDIO 服装制版工作室 保留所有权利
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
