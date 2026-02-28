@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>样衣制作 | JANBAN STUDIO</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --text: #1D1D1F;
+    --text-secondary: #86868B;
+    --blue: #0071E3;
+    --bg: #fff;
+    --bg-alt: #F5F5F7;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 999;
+}
+.nav-container {
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text);
+    text-decoration: none;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+.nav-links a {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: 0.2s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--blue);
+    font-weight: 500;
+}
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 24px;
+    text-align: center;
+}
+.title {
+    font-size: 56px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s;
+}
+.subtitle {
+    font-size: 24px;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s 0.2s;
+}
+.desc {
+    max-width: 700px;
+    text-align: left;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s 0.4s;
+}
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s 0.6s;
+}
+.btn {
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.btn-primary {
+    background: var(--blue);
+    color: #fff;
+}
+.btn-primary:hover {
+    background: #0077ED;
+}
+.btn-outline {
+    border: 1px solid var(--blue);
+    color: var(--blue);
+}
+.btn-outline:hover {
+    background: #f0f7ff;
+}
+.visible .title,
+.visible .subtitle,
+.visible .desc,
+.visible .buttons {
+    opacity: 1;
+    transform: translateY(0);
+}
+footer {
+    background: var(--bg-alt);
+    padding: 50px 20px 30px;
+    text-align: center;
+    border-top: 1px solid #E6E6E6;
+}
+footer p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+.copyright {
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #E6E6E6;
+}
+@media (max-width:768px) {
+    .title { font-size: 36px; }
+    .subtitle { font-size: 19px; }
+    .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+<div class="nav-container">
+    <a href="index.html" class="logo">JANBAN</a>
+    <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="cases.html">案例</a>
+        <a href="process.html">流程</a>
+        <a href="service-cad.html">CAD制版</a>
+        <a href="service-cloth.html">来图来样</a>
+        <a href="service-optimize.html">版型优化</a>
+        <a href="service-sample.html" class="active">样衣制作</a>
+        <a href="contact.html">联系我们</a>
+    </div>
+</div>
+</div>
+
+<section class="section">
+    <h1 class="title">样衣制作</h1>
+    <p class="subtitle">纸样验证 · 试穿调整 · 拍摄样衣 · 一站式落地</p>
+    <div class="desc">
+        从纸样到成品样衣，全程精细制作，确保版型合身、工艺到位、效果达标。<br><br>
+        • 纸样验证与试穿调整，提前规避大货问题<br>
+        • 适合电商拍摄、展会展示、订货会、直播样衣<br>
+        • 支持小单快反，快速交付
+    </div>
+    <div class="buttons">
+        <a href="contact.html" class="btn btn-primary">立即定制</a>
+        <a href="index.html" class="btn btn-outline">返回首页</a>
+    </div>
+</section>
+
+<footer>
+<p>长春市人民广场重庆路498号</p>
+<p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
+<div class="copyright">© 2026 JANBAN STUDIO 保留所有权利</div>
+</footer>
+
+<script>
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.3 });
+sections.forEach(sec => observer.observe(sec));
+</script>
+
+</body>
+</html>
