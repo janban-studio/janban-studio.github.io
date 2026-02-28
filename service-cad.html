@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD数字化制版 | JANBAN STUDIO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {--text:#1D1D1F;--text-secondary:#86868B;--blue:#0071E3;--bg:#fff;--bg-alt:#F5F5F7;--border:#E6E6E6;}
+        * {margin:0;padding:0;box-sizing:border-box;}
+        body {font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;}
+        .navbar {position:fixed;top:0;left:0;width:100%;height:44px;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);z-index:999;border-bottom:1px solid rgba(0,0,0,0.05);}
+        .nav-container {max-width:1280px;height:100%;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;}
+        .logo {font-weight:600;font-size:18px;color:var(--text);text-decoration:none;}
+        .nav-links {display:flex;gap:30px;}
+        .nav-links a {font-size:14px;color:var(--text-secondary);text-decoration:none;transition:0.2s;}
+        .nav-links a:hover {color:var(--blue);}
+        .cta-button {background:var(--blue);color:white !important;padding:6px 14px;border-radius:18px;font-weight:500;}
+        .cta-button:hover {background:#0077ED;}
+        main {padding-top:44px;}
+        .service-header {background:var(--bg-alt);padding:80px 0 60px;}
+        .container {max-width:1280px;margin:0 auto;padding:0 20px;}
+        .service-header h1 {font-size:48px;font-weight:600;margin-bottom:16px;}
+        .service-header p {font-size:20px;color:var(--text-secondary);max-width:800px;}
+        .service-content {padding:60px 0;}
+        .service-content h2 {font-size:32px;font-weight:600;margin-bottom:24px;color:var(--blue);}
+        .service-content p {font-size:17px;line-height:1.8;margin-bottom:20px;color:var(--text);}
+        .service-content img {width:100%;max-width:800px;border-radius:12px;margin:30px 0;}
+        .back-btn {display:inline-block;margin-top:20px;color:var(--blue);text-decoration:none;font-size:16px;}
+        footer {background:var(--bg-alt);padding:50px 0 30px;border-top:1px solid var(--border);margin-top:40px;}
+        .footer-info {text-align:center;font-size:14px;color:var(--text-secondary);}
+        .footer-info p {margin-bottom:8px;}
+        .footer-info a {color:var(--blue);text-decoration:none;}
+        .copyright {text-align:center;font-size:12px;color:var(--text-secondary);padding-top:20px;border-top:1px solid var(--border);margin-top:20px;}
+        @media (max-width:768px) {
+            .service-header h1 {font-size:36px;}
+            .nav-links {display:none;}
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">JANBAN</a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="cases.html">案例</a>
+                <a href="process.html">工艺</a>
+                <a href="contact.html" class="cta-button">立即咨询</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="service-header">
+            <div class="container">
+                <h1>CAD数字化制版</h1>
+                <p>以数字化技术为核心，实现版型绘制、修改、推板的高效化，适配品牌批量生产的精准需求</p>
+            </div>
+        </section>
+
+        <section class="service-content">
+            <div class="container">
+                <h2>核心优势</h2>
+                <p>1. <strong>精准度高</strong>：告别手工制版的误差，CAD系统精准到0.1cm，确保每一件成衣的版型统一。</p>
+                <p>2. <strong>效率翻倍</strong>：支持一键推板、放码，无需重复绘制，大幅缩短制版周期，助力快速上新。</p>
+                <p>3. <strong>便于修改</strong>：数字化文件可无限次编辑、存储，后续款式迭代或客户调整更便捷。</p>
+                <p>4. <strong>兼容性强</strong>：支持导出DXF、PLT等多种工业格式，适配各类服装裁剪设备。</p>
+
+                <img src="https://images.unsplash.com/photo-1584917897543-c23d29a50a95?q=80&w=1200&auto=format&fit=crop" alt="CAD制版工作图">
+
+                <h2>服务流程</h2>
+                <p>1. 需求沟通：确认服装品类、尺寸标准、面料特性及生产要求；</p>
+                <p>2. 数字化绘制：专业制版师使用高端CAD软件完成基础纸样绘制；</p>
+                <p>3. 推板放码：根据尺码表完成全尺码推板，生成工业生产纸样；</p>
+                <p>4. 文件交付：提供电子版纸样文件，支持打印纸样（可选）。</p>
+
+                <a href="index.html#services" class="back-btn">← 返回服务列表</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-info">
+                <p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
+                <p>地址：长春市人民广场重庆路498号</p>
+            </div>
+            <div class="copyright">
+                &copy; 2026 JANBAN STUDIO 服装制版工作室 保留所有权利
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
