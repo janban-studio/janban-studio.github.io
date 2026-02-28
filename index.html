@@ -1,287 +1,367 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JANBAN Studio | 精准制版</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --text: #1D1D1F;
-            --text-secondary: #86868B;
-            --blue: #0071E3;
-            --bg: #fff;
-            --bg-alt: #F5F5F7;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text);
-            background: var(--bg);
-            -webkit-font-smoothing: antialiased;
-        }
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 44px;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px);
-            z-index: 999;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        .nav-container {
-            max-width: 1280px;
-            height: 100%;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-weight: 600;
-            font-size: 18px;
-            color: var(--text);
-            text-decoration: none;
-        }
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-        .nav-links a {
-            font-size: 14px;
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: 0.2s;
-        }
-        .nav-links a:hover {
-            color: var(--blue);
-        }
-        .section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 60px 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .section:nth-child(odd) {
-            background: var(--bg-alt);
-        }
-        .section:nth-child(even) {
-            background: var(--bg);
-        }
-        .section-title {
-            font-size: 56px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .section-subtitle {
-            font-size: 24px;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin-bottom: 32px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
-        }
-        .section-image {
-            max-width: 80%;
-            max-height: 60vh;
-            object-fit: contain;
-            opacity: 0;
-            transform: scale(0.9) translateY(20px);
-            transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
-        }
-        .section-video {
-            width: 100%;
-            max-width: 800px;
-            border-radius: 12px;
-            overflow: hidden;
-            opacity: 0;
-            transform: scale(0.9) translateY(20px);
-            transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
-        }
-        .section-video iframe {
-            width: 100%;
-            height: 450px;
-            border: none;
-        }
-        .section-buttons {
-            display: flex;
-            gap: 20px;
-            margin-top: 40px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease 0.6s, transform 0.8s ease 0.6s;
-        }
-        .btn {
-            padding: 12px 24px;
-            border-radius: 24px;
-            font-size: 17px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: 0.2s;
-        }
-        .btn-primary {
-            background: var(--blue);
-            color: white;
-        }
-        .btn-primary:hover {
-            background: #0077ED;
-        }
-        .btn-secondary {
-            border: 1px solid var(--blue);
-            color: var(--blue);
-        }
-        .btn-secondary:hover {
-            background: #f0f7ff;
-        }
-        .visible .section-title,
-        .visible .section-subtitle,
-        .visible .section-buttons {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .visible .section-image,
-        .visible .section-video {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 36px;
-            }
-            .section-subtitle {
-                font-size: 18px;
-            }
-            .section-image {
-                max-width: 100%;
-            }
-            .section-video iframe {
-                height: 300px;
-            }
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JANBAN STUDIO | 专业服装制版</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --text: #1D1D1F;
+    --text-secondary: #86868B;
+    --blue: #0071E3;
+    --bg: #fff;
+    --bg-alt: #F5F5F7;
+    --bg-dark: #000;
+    --bg-light-blue: #dceefc;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 999;
+}
+.nav-container {
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text);
+    text-decoration: none;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+.nav-links a {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: 0.2s;
+}
+.nav-links a:hover {
+    color: var(--blue);
+}
+.nav-links a.active {
+    color: var(--blue);
+    font-weight: 500;
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.section--dark {
+    background: var(--bg-dark);
+    color: #fff;
+}
+.section--light-blue {
+    background: var(--bg-light-blue);
+}
+
+.title {
+    font-size: 56px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s;
+}
+.section--dark .title {
+    color: #fff;
+}
+.subtitle {
+    font-size: 24px;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-bottom: 32px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s 0.2s;
+}
+.section--dark .subtitle {
+    color: #a1a1a1;
+}
+.desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s 0.3s;
+}
+.section--dark .desc {
+    color: #a1a1a1;
+}
+.img-box {
+    max-width: 80%;
+    max-height: 60vh;
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+    transition: 0.8s 0.4s;
+}
+.img-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+.buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s 0.6s;
+}
+.btn {
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.btn-primary {
+    background: var(--blue);
+    color: #fff;
+}
+.btn-primary:hover {
+    background: #0077ED;
+}
+.btn-outline {
+    border: 1px solid var(--blue);
+    color: var(--blue);
+}
+.btn-outline:hover {
+    background: #f0f7ff;
+}
+.section--dark .btn-outline {
+    border-color: #fff;
+    color: #fff;
+}
+.section--dark .btn-outline:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.visible .title,
+.visible .subtitle,
+.visible .desc,
+.visible .buttons,
+.visible .img-box {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+footer {
+    background: var(--bg-alt);
+    padding: 50px 20px 30px;
+    text-align: center;
+    border-top: 1px solid #E6E6E6;
+}
+footer p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+.copyright {
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #E6E6E6;
+}
+
+@media (max-width:768px) {
+    .title { font-size: 36px; }
+    .subtitle { font-size: 19px; }
+    .img-box { max-width: 100%; }
+    .nav-links { display: none; }
+}
+</style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">JANBAN</a>
-            <div class="nav-links">
-                <a href="#services">服务</a>
-                <a href="#cases">案例</a>
-                <a href="#process">工艺</a>
-                <a href="#contact">联系我们</a>
-            </div>
-        </div>
-    </nav>
 
-    <div class="section" id="hero">
-        <h1 class="section-title">精准制版，定义完美版型</h1>
-        <p class="section-subtitle">融合前沿数字化技术与精湛手工工艺，为您打造兼具美感与实穿性的服装版型。</p>
-        <div class="section-buttons">
-            <a href="#contact" class="btn btn-primary">制版咨询</a>
-            <a href="#services" class="btn btn-secondary">了解服务</a>
-        </div>
+<!-- 导航 -->
+<div class="navbar">
+<div class="nav-container">
+    <a href="index.html" class="logo">JANBAN</a>
+    <div class="nav-links">
+        <a href="index.html" class="active">首页</a>
+        <a href="#service">服务</a>
+        <a href="#case">案例</a>
+        <a href="#process">流程</a>
+        <a href="#contact" class="cta">联系我们</a>
     </div>
+</div>
+</div>
 
-    <div class="section" id="cad">
-        <h2 class="section-title">CAD数字化制版</h2>
-        <p class="section-subtitle">基于最新CAD软件，实现高效、精准的版型绘制与修改，支持一键推板。</p>
-        <img class="section-image" src="https://images.unsplash.com/photo-1584917897543-c23d29a50a95?q=80&w=1920&auto=format&fit=crop" alt="CAD制版">
-        <div class="section-buttons">
-            <a href="service-cad.html" class="btn btn-primary">了解更多</a>
-        </div>
+<!-- 1 主视觉 -->
+<section class="section">
+    <h1 class="title">一件好衣服<br>从版型开始</h1>
+    <p class="subtitle">高端服装CAD制版｜来图来样｜版型优化｜样衣制作</p>
+    <div class="img-box">
+        <img src="https://picsum.photos/id/1058/800/600" alt="制版工作室">
     </div>
-
-    <div class="section" id="sample">
-        <h2 class="section-title">来图来样打版</h2>
-        <p class="section-subtitle">精准还原客户提供的设计图或样衣，严格把控尺寸与细节，还原设计精髓。</p>
-        <img class="section-image" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1920&auto=format&fit=crop" alt="来图来样打版">
-        <div class="section-buttons">
-            <a href="service-sample.html" class="btn btn-primary">了解更多</a>
-        </div>
+    <div class="buttons">
+        <a href="#contact" class="btn btn-primary">立即咨询</a>
+        <a href="#case" class="btn btn-outline">查看案例</a>
     </div>
+</section>
 
-    <div class="section" id="optimize">
-        <h2 class="section-title">版型优化升级</h2>
-        <p class="section-subtitle">针对现有版型进行舒适度、美观度优化，解决起翘、不服帖等工艺痛点。</p>
-        <img class="section-image" src="https://images.unsplash.com/photo-1516812955261-7515ca435f7f?q=80&w=1920&auto=format&fit=crop" alt="版型优化">
-        <div class="section-buttons">
-            <a href="service-optimize.html" class="btn btn-primary">了解更多</a>
-        </div>
+<!-- 2 CAD制版 -->
+<section class="section">
+    <h2 class="title">CAD数字化制版</h2>
+    <p class="subtitle">精准到0.1cm<br>专业纸样 可直接量产</p>
+    <div class="img-box">
+        <img src="https://picsum.photos/id/180/800/600" alt="CAD制版">
     </div>
-
-    <div class="section" id="sample-make">
-        <h2 class="section-title">样衣制作</h2>
-        <p class="section-subtitle">专业工艺师团队制作样衣，提供试穿反馈与调整建议，确保量产完美。</p>
-        <img class="section-image" src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=1920&auto=format&fit=crop" alt="样衣制作">
-        <div class="section-buttons">
-            <a href="service-cloth.html" class="btn btn-primary">了解更多</a>
-        </div>
+    <div class="buttons">
+        <a href="#service" class="btn btn-primary">了解服务</a>
+        <a href="#contact" class="btn btn-outline">定制制版</a>
     </div>
+</section>
 
-    <div class="section" id="cases">
-        <h2 class="section-title">精选案例</h2>
-        <p class="section-subtitle">我们与众多品牌合作，涵盖高品质定制、商业成衣与功能性服装。</p>
-        <img class="section-image" src="https://images.unsplash.com/photo-1525450826786-227cbef70703?q=80&w=1920&auto=format&fit=crop" alt="专业户外功能服装">
-        <div class="section-buttons">
-            <a href="cases.html" class="btn btn-primary">查看全部案例</a>
-        </div>
+<!-- 3 来图来样 -->
+<section class="section section--light-blue">
+    <h2 class="title">来图来样打版</h2>
+    <p class="subtitle">图片｜样衣｜手稿｜参考款<br>1:1精准结构还原</p>
+    <div class="img-box">
+        <img src="https://picsum.photos/id/119/800/600" alt="来图打版">
     </div>
-
-    <div class="section" id="process">
-        <h2 class="section-title">看得见的精湛工艺</h2>
-        <p class="section-subtitle">我们将数字化技术与传统工艺完美结合，从纸样的精准绘制，到面料的细致裁剪，再到样衣的手工缝制，每一个步骤都严格把控。</p>
-        <div class="section-video">
-            <iframe src="https://v.douyin.com/80R8rpDVEKE/" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="section-buttons">
-            <a href="#" class="btn btn-primary">获取工艺手册</a>
-        </div>
+    <div class="buttons">
+        <a href="#service" class="btn btn-primary">了解流程</a>
+        <a href="#contact" class="btn btn-outline">来图打版</a>
     </div>
+</section>
 
-    <div class="section" id="contact">
-        <h2 class="section-title">联系我们</h2>
-        <p class="section-subtitle">无论你有任何需求或需求，都可以填写下方表单，我们的专业团队会在24小时内与你联系。</p>
-        <div class="section-buttons">
-            <a href="contact.html" class="btn btn-primary">立即咨询</a>
-        </div>
+<!-- 4 版型优化 -->
+<section class="section section--dark">
+    <h2 class="title">版型优化升级</h2>
+    <p class="subtitle">显瘦·舒适·贴合·稳定<br>让普通版型成为爆款</p>
+    <div class="img-box">
+        <img src="https://picsum.photos/id/106/800/600" alt="版型优化">
     </div>
+    <div class="buttons">
+        <a href="#service" class="btn btn-primary">优化方案</a>
+        <a href="#contact" class="btn btn-outline">立即升级</a>
+    </div>
+</section>
 
-    <script>
-        const sections = document.querySelectorAll('.section');
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.3
-        };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+<!-- 5 样衣制作 -->
+<section class="section">
+    <h2 class="title">样衣制作</h2>
+    <p class="subtitle">纸样验证·试穿调整·拍摄样衣<br>一站式落地</p>
+    <div class="img-box">
+        <img src="https://picsum.photos/id/96/800/600" alt="样衣制作">
+    </div>
+    <div class="buttons">
+        <a href="#service" class="btn btn-primary">查看工艺</a>
+        <a href="#contact" class="btn btn-outline">制作样衣</a>
+    </div>
+</section>
+
+<!-- 6 全品类 -->
+<section class="section section--light-blue">
+    <h2 class="title">全品类覆盖</h2>
+    <p class="subtitle">女装·男装·新中式·工装·羽绒·针织·连衣裙·西装</p>
+    <div class="img-box">
+        <img src="https://picsum.photos/id/237/800/600" alt="全品类服装">
+    </div>
+    <div class="buttons">
+        <a href="#case" class="btn btn-primary">查看案例</a>
+    </div>
+</section>
+
+<!-- 7 优势 -->
+<section class="section">
+    <h2 class="title">我们的优势</h2>
+    <p class="subtitle">十年经验·一对一服务·快速交付·量产级标准<br>售后免费微调</p>
+    <div class="img-box">
+        <img src="https://picsum.photos/id/111/800/600" alt="专业团队">
+    </div>
+    <div class="buttons">
+        <a href="#advantage" class="btn btn-primary">了解优势</a>
+    </div>
+</section>
+
+<!-- 8 案例 -->
+<section class="section section--dark">
+    <h2 class="title">精品案例</h2>
+    <p class="subtitle">上千款成功版型<br>只做能落地、能大货的专业纸样</p>
+    <div class="img-box">
+        <img src="https://picsum.photos/id/15/800/600" alt="服装案例">
+    </div>
+    <div class="buttons">
+        <a href="#case" class="btn btn-primary">全部案例</a>
+        <a href="#contact" class="btn btn-outline">咨询同款</a>
+    </div>
+</section>
+
+<!-- 9 联系 -->
+<section class="section">
+    <h2 class="title">开始你的优质版型</h2>
+    <p class="subtitle">好版型，自带销量。</p>
+    <div class="desc">微信：JANBAN888　｜　邮箱：janban_studio@163.com</div>
+    <div class="img-box">
+        <img src="https://picsum.photos/id/211/800/600" alt="联系我们">
+    </div>
+    <div class="buttons">
+        <a href="#contact" class="btn btn-primary">立即咨询</a>
+        <a href="index.html" class="btn btn-outline">返回顶部</a>
+    </div>
+</section>
+
+<footer>
+<p>长春市人民广场重庆路498号</p>
+<p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
+<div class="copyright">© 2026 JANBAN STUDIO 保留所有权利</div>
+</footer>
+
+<script>
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.3 });
+sections.forEach(sec => observer.observe(sec));
+</script>
+
 </body>
 </html>
