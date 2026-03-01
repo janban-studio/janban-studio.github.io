@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CAD数字化制版 | JANBAN STUDIO</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300,400,500,600,700&display=swap" rel="stylesheet">
 <style>
 :root {
     --text: #1D1D1F;
@@ -19,8 +19,10 @@
     box-sizing: border-box;
 }
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
 }
 .navbar {
     position: fixed;
@@ -50,88 +52,174 @@ body {
 }
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 24px;
 }
 .nav-links a {
     font-size: 14px;
     color: var(--text-secondary);
     text-decoration: none;
+    transition: 0.2s;
 }
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover {
     color: var(--blue);
 }
-.section {
+.nav-links a.active {
+    color: var(--blue);
+    font-weight: 500;
+}
+
+/* 页面主体 */
+.cad-section {
     min-height: 100vh;
+    padding: 80px 24px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 80px 24px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+.cad-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 .title {
-    font-size: 56px;
-    margin-bottom: 16px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
 }
 .subtitle {
-    font-size: 24px;
+    font-size: 21px;
+    line-height: 1.4;
     color: var(--text-secondary);
-    margin-bottom: 30px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s 0.2s;
+    max-width: 700px;
+    margin-bottom: 40px;
 }
 .desc {
-    max-width: 700px;
-    text-align: left;
-    line-height: 1.8;
+    font-size: 18px;
     color: var(--text-secondary);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s 0.4s;
+    max-width: 800px;
+    margin-bottom: 40px;
+    text-align: left;
 }
+
+/* 优势列表 */
+.advantages {
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: left;
+}
+.advantage-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+.advantage-item .icon {
+    font-size: 24px;
+    color: var(--blue);
+}
+.advantage-item h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.advantage-item p {
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+/* 图片展示区 */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 40px;
+}
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
 .buttons {
-    margin-top: 40px;
     display: flex;
     gap: 20px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s 0.6s;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .btn {
     padding: 12px 24px;
     border-radius: 24px;
-    text-decoration: none;
     font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
 }
 .btn-primary {
     background: var(--blue);
     color: #fff;
+    border: none;
 }
 .btn-outline {
     border: 1px solid var(--blue);
     color: var(--blue);
 }
-.visible .title,
-.visible .subtitle,
-.visible .desc,
-.visible .buttons {
-    opacity: 1;
-    transform: translateY(0);
+
+/* 弹窗样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
 }
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 320px;
+}
+.modal-content img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+}
+.modal-content p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+.close-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: var(--bg-alt);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
 footer {
     background: var(--bg-alt);
-    padding: 50px 20px 30px;
+    padding: 40px 20px;
     text-align: center;
     border-top: 1px solid #E6E6E6;
 }
 footer p {
     font-size: 14px;
     color: var(--text-secondary);
+    margin-bottom: 8px;
 }
 .copyright {
     font-size: 12px;
@@ -139,6 +227,7 @@ footer p {
     padding-top: 20px;
     border-top: 1px solid #E6E6E6;
 }
+
 @media (max-width:768px) {
     .title { font-size: 36px; }
     .subtitle { font-size: 19px; }
@@ -158,36 +247,94 @@ footer p {
         <a href="service-cloth.html">来图来样</a>
         <a href="service-optimize.html">版型优化</a>
         <a href="service-sample.html">样衣制作</a>
-        <a href="contact.html">联系我们</a>
     </div>
 </div>
 </div>
 
-<section class="section">
+<section class="cad-section">
     <h1 class="title">CAD数字化制版</h1>
     <p class="subtitle">精准到0.1cm，专业纸样可直接量产</p>
-    <div class="desc">
-        采用专业服装CAD软件打版，从结构、省位、线条到放码排料全部标准化。<br><br>
-        • 支持 DXF / AAMA 等工厂标准格式<br>
-        • 提供全套放码、排料、工艺单文件<br>
-        • 直接对接工厂，减少误差与沟通成本
+
+    <p class="desc">采用专业服装CAD软件打版，从结构、省位、线条到放码排料全部标准化，确保每一款版型都能精准落地。</p>
+
+    <div class="advantages">
+        <div class="advantage-item">
+            <div class="icon">📏</div>
+            <div>
+                <h4>精准到0.1cm</h4>
+                <p>所有尺寸精确到0.1厘米，避免大货生产时的误差。</p>
+            </div>
+        </div>
+        <div class="advantage-item">
+            <div class="icon">📂</div>
+            <div>
+                <h4>支持 DXF / AAMA 格式</h4>
+                <p>输出工厂标准格式，可直接导入切割机，无需二次转换。</p>
+            </div>
+        </div>
+        <div class="advantage-item">
+            <div class="icon">📋</div>
+            <div>
+                <h4>全套文件交付</h4>
+                <p>提供放码表、排料图、工艺单等全套生产文件。</p>
+            </div>
+        </div>
+        <div class="advantage-item">
+            <div class="icon">🏭</div>
+            <div>
+                <h4>直接对接工厂</h4>
+                <p>减少沟通成本，版型一次成型，可直接用于批量生产。</p>
+            </div>
+        </div>
     </div>
+
+    <!-- 图片展示区 -->
+    <div class="image-grid">
+        <img src="https://via.placeholder.com/400x500/eeeeee/666666&text=CAD版图1" alt="CAD版图1">
+        <img src="https://via.placeholder.com/400x500/eeeeee/666666&text=CAD版图2" alt="CAD版图2">
+        <img src="https://via.placeholder.com/400x500/eeeeee/666666&text=CAD版图3" alt="CAD版图3">
+    </div>
+
     <div class="buttons">
-        <a href="contact.html" class="btn btn-primary">立即咨询</a>
+        <button onclick="openModal()" class="btn btn-primary">立即咨询</button>
         <a href="index.html" class="btn btn-outline">返回首页</a>
     </div>
 </section>
 
+<!-- 二维码弹窗（已放入你的微信二维码） -->
+<div id="qrcodeModal" class="modal">
+    <div class="modal-content">
+        <img src="https://raw.githubusercontent.com/janban-studio/janban-studio.github.io/refs/heads/main/images/mmqrcode1772330593333.png" alt="简版JANBAN沟通号贰">
+        <p>扫一扫上面的二维码图案，加我为朋友。</p>
+        <button class="close-btn" onclick="closeModal()">关闭</button>
+    </div>
+</div>
+
 <footer>
 <p>长春市人民广场重庆路498号</p>
 <p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
-<div class="copyright">© 2026 JANBAN STUDIO 保留所有权利</div>
+<div class="copyright">© 2026 JANBAN STUDIO</div>
 </footer>
 
 <script>
-document.querySelectorAll('.section').forEach(s=>{
-    new IntersectionObserver(e=>e[0].isIntersecting&&s.classList.add('visible'),{threshold:0.3}).observe(s)
-})
+const sections = document.querySelectorAll('.cad-section');
+const ob = new IntersectionObserver(es => {
+    es.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
+}, { threshold: 0.3 });
+sections.forEach(s => ob.observe(s));
+
+function openModal() {
+    document.getElementById('qrcodeModal').style.display = 'flex';
+}
+function closeModal() {
+    document.getElementById('qrcodeModal').style.display = 'none';
+}
+window.onclick = function(event) {
+    const modal = document.getElementById('qrcodeModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
 </script>
 </body>
 </html>
