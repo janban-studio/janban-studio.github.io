@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>来图来样打版 | JANBAN STUDIO</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>来图来样 | JANBAN STUDIO</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300,400,500,600,700&display=swap" rel="stylesheet">
 <style>
 :root {
     --text: #1D1D1F;
@@ -19,8 +19,10 @@
     box-sizing: border-box;
 }
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
 }
 .navbar {
     position: fixed;
@@ -37,157 +39,4 @@ body {
     max-width: 1280px;
     height: 100%;
     margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.logo {
-    font-weight: 600;
-    font-size: 18px;
-    color: var(--text);
-    text-decoration: none;
-}
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
-.nav-links a {
-    font-size: 14px;
-    color: var(--text-secondary);
-    text-decoration: none;
-}
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--blue);
-}
-.section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 24px;
-    text-align: center;
-}
-.title {
-    font-size: 56px;
-    margin-bottom: 16px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s;
-}
-.subtitle {
-    font-size: 24px;
-    color: var(--text-secondary);
-    margin-bottom: 30px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s 0.2s;
-}
-.desc {
-    max-width: 700px;
-    text-align: left;
-    line-height: 1.8;
-    color: var(--text-secondary);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s 0.4s;
-}
-.buttons {
-    margin-top: 40px;
-    display: flex;
-    gap: 20px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s 0.6s;
-}
-.btn {
-    padding: 12px 24px;
-    border-radius: 24px;
-    text-decoration: none;
-    font-size: 17px;
-}
-.btn-primary {
-    background: var(--blue);
-    color: #fff;
-}
-.btn-outline {
-    border: 1px solid var(--blue);
-    color: var(--blue);
-}
-.visible .title,
-.visible .subtitle,
-.visible .desc,
-.visible .buttons {
-    opacity: 1;
-    transform: translateY(0);
-}
-footer {
-    background: var(--bg-alt);
-    padding: 50px 20px 30px;
-    text-align: center;
-    border-top: 1px solid #E6E6E6;
-}
-footer p {
-    font-size: 14px;
-    color: var(--text-secondary);
-}
-.copyright {
-    font-size: 12px;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #E6E6E6;
-}
-@media (max-width:768px) {
-    .title { font-size: 36px; }
-    .subtitle { font-size: 19px; }
-    .nav-links { display: none; }
-}
-</style>
-</head>
-<body>
-<div class="navbar">
-<div class="nav-container">
-    <a href="index.html" class="logo">JANBAN</a>
-    <div class="nav-links">
-        <a href="index.html">首页</a>
-        <a href="cases.html">案例</a>
-        <a href="process.html">流程</a>
-        <a href="service-cad.html">CAD制版</a>
-        <a href="service-cloth.html" class="active">来图来样</a>
-        <a href="service-optimize.html">版型优化</a>
-        <a href="service-sample.html">样衣制作</a>
-        <a href="contact.html">联系我们</a>
-    </div>
-</div>
-</div>
-
-<section class="section">
-    <h1 class="title">来图来样打版</h1>
-    <p class="subtitle">图片｜样衣｜手稿｜参考款 1:1精准还原</p>
-    <div class="desc">
-        无论你提供图片、样衣、手稿还是参考款，我们都能精准拆解结构，还原每一处细节。<br><br>
-        • 支持图片/视频/样衣/手稿多种形式<br>
-        • 1:1还原版型结构、比例、细节<br>
-        • 经验制版师把控，确保可生产、好穿着
-    </div>
-    <div class="buttons">
-        <a href="contact.html" class="btn btn-primary">立即咨询</a>
-        <a href="index.html" class="btn btn-outline">返回首页</a>
-    </div>
-</section>
-
-<footer>
-<p>长春市人民广场重庆路498号</p>
-<p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
-<div class="copyright">© 2026 JANBAN STUDIO 保留所有权利</div>
-</footer>
-
-<script>
-document.querySelectorAll('.section').forEach(s=>{
-    new IntersectionObserver(e=>e[0].isIntersecting&&s.classList.add('visible'),{threshold:0.3}).observe(s)
-})
-</script>
-</body>
-</html>
+    padding
