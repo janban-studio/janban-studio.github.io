@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>童装套装/连体衣 | JANBAN</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--text:#1D1D1F;--text-secondary:#86868B;--blue:#0071E3;--bg:#fff;--bg-alt:#F5F5F7;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
+.navbar{position:fixed;top:0;left:0;width:100%;height:44px;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.05);z-index:999;}
+.nav-container{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:100%;}
+.logo{font-weight:600;font-size:18px;color:var(--text);text-decoration:none;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none;}
+.nav-links a.active{color:var(--blue);font-weight:500;}
+.detail{min-height:100vh;padding:80px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;transform:translateY(20px);transition:.6s;}
+.detail.visible{opacity:1;transform:translateY(0);}
+h1{font-size:42px;margin-bottom:20px;}
+p{color:var(--text-secondary);font-size:18px;margin-bottom:30px;max-width:700px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;width:100%;max-width:900px;margin-bottom:40px;}
+.grid img{width:100%;border-radius:16px;}
+.btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+.btn{padding:12px 26px;border-radius:24px;text-decoration:none;font-weight:500;}
+.btn-outline{border:1px solid var(--blue);color:var(--blue);}
+footer{background:var(--bg-alt);padding:40px 20px;text-align:center;margin-top:60px;}
+footer p{font-size:14px;color:var(--text-secondary);}
+@media(max-width:768px){h1{font-size:32px;}.nav-links{display:none;}}
+</style>
+</head>
+<body>
+<div class="navbar">
+<div class="nav-container">
+<a href="index.html" class="logo">JANBAN</a>
+<div class
