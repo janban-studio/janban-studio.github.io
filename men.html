@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>休闲男装 | JANBAN STUDIO</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {--text:#1D1D1F;--text-secondary:#86868B;--blue:#0071E3;--bg:#fff;--bg-alt:#F5F5F7;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
+.navbar{position:fixed;top:0;left:0;width:100%;height:44px;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.05);z-index:999;}
+.nav-container{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:100%;}
+.logo{font-weight:600;font-size:18px;color:var(--text);text-decoration:none;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none;}
+.nav-links a.active{color:var(--blue);font-weight:500;}
+
+.page{padding:120px 20px 80px;max-width:900px;margin:0 auto;text-align:center;}
+h1{font-size:34px;margin-bottom:10px;}
+.desc{color:var(--text-secondary);margin-bottom:40px;}
+
+.sub-nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:50px;}
+.sub-nav a{padding:8px 14px;border-radius:20px;background:var(--bg-alt);color:var(--text-secondary);text-decoration:none;font-size:14px;}
+.sub-nav a.hot{background:#0071E3;color:#fff;}
+
+.block{margin-bottom:60px;}
+.block h2{font-size:26px;margin-bottom:16px;}
+.block p{color:var(--text-secondary);margin-bottom:24px;}
+.grid-img{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.grid-img img{width:100%;border-radius:12px;}
+
+.video-box{margin:50px 0;}
+.video-box h2{font-size:24px;margin-bottom:20px;}
+video{width:100%;max-width:600px;border-radius:12px;}
+
+.btn{display:inline-block;padding:12px 28px;border-radius:24px;background:var(--blue);color:#fff;text-decoration:none;font-weight:500;margin-top:20px;}
+
+footer{background:var(--bg-alt);padding:40px 20px;text-align:center;}
+footer p{font-size:14px;color:var(--text-secondary);margin-bottom:6px;}
+
+@media(max-width:768px){.nav-links{display:none;}}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">JANBAN</a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="cases.html">案例</a>
+      <a href="men.html" class="active">男装</a>
+      <a href="women.html">女装</a>
+      <a href="kids.html">童装</a>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <h1>休闲男装版型</h1>
+  <p class="desc">专业休闲男装，<strong>羽绒服是核心强项</strong></p>
+
+  <div class="sub-nav">
+    <a href="#down" class="hot">羽绒服（强项）</a>
+    <a href="#tshirt">T恤</a>
+    <a href="#hoodie">卫衣</a>
+    <a href="#pants">裤装</a>
+    <a href="#shirt">衬衫</a>
+    <a href="#jacket">外套</a>
+  </div>
+
+  <div id="down" class="block">
+    <h2>❄️ 羽绒服（强项）</h2>
+    <p>充绒量精准控制、防风保暖结构、可直接大货生产</p>
+    <div class="grid-img">
+      <img src="https://via.placeholder.com/400x500/eeeeee/666666&text=羽绒服版型" alt="">
+    </div>
+  </div>
+
+  <div id="hoodie" class="block">
+    <h2>连帽卫衣</h2>
+    <p>舒适百搭，版型稳定</p>
+    <div class="grid-img">
+      <img src="https://raw.githubusercontent.com/janban-studio/janban-studio.github.io/refs/heads/main/images/MEITU_20260301_003611434.jpg" alt="">
+    </div>
+  </div>
+
+  <div id="tshirt" class="block">
+    <h2>T 恤 / 长袖T</h2>
+    <p>基础款版型，适合大批量生产</p>
+    <div class="grid-img">
+      <img src="https://via.placeholder.com/400x500/eeeeee/666666&text=T恤版型" alt="">
+    </div>
+  </div>
+
+  <div class="video-box">
+    <h2>版型制作视频</h2>
+    <video controls>
+      <source src="https://raw.githubusercontent.com/janban-studio/janban-studio.github.io/refs/heads/main/videos/demo.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <a href="index.html" class="btn">返回咨询</a>
+</div>
+
+<footer>
+  <p>长春市人民广场重庆路498号</p>
+  <p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
+  <p>© 2026 JANBAN STUDIO</p>
+</footer>
+
+</body>
+</html>
