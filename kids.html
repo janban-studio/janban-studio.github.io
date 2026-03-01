@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>休闲童装 | JANBAN STUDIO</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {--text:#1D1D1F;--text-secondary:#86868B;--blue:#0071E3;--bg:#fff;--bg-alt:#F5F5F7;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
+.navbar{position:fixed;top:0;left:0;width:100%;height:44px;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.05);z-index:999;}
+.nav-container{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:100%;}
+.logo{font-weight:600;font-size:18px;color:var(--text);text-decoration:none;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none;}
+.nav-links a.active{color:var(--blue);font-weight:500;}
+
+.page{padding:120px 20px 80px;max-width:900px;margin:0 auto;text-align:center;}
+h1{font-size:34px;margin-bottom:10px;}
+.desc{color:var(--text-secondary);margin-bottom:40px;}
+.block{margin-bottom:60px;}
+.block h2{font-size:26px;margin-bottom:16px;}
+.block p{color:var(--text-secondary);margin-bottom:24px;}
+.grid-img{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+.grid-img img{width:100%;border-radius:12px;}
+.btn{display:inline-block;padding:12px 28px;border-radius:24px;background:var(--blue);color:#fff;text-decoration:none;font-weight:500;}
+footer{background:var(--bg-alt);padding:40px 20px;text-align:center;}
+footer p{font-size:14px;color:var(--text-secondary);margin-bottom:6px;}
+@media(max-width:768px){.nav-links{display:none;}}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">JANBAN</a>
+    <div class="nav-links">
+      <a href="index.html">首页</a>
+      <a href="cases.html">案例</a>
+      <a href="men.html">男装</a>
+      <a href="women.html">女装</a>
+      <a href="kids.html" class="active">童装</a>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <h1>休闲童装版型</h1>
+  <p class="desc">小童、中童、婴童，安全舒适版型</p>
+
+  <div class="block">
+    <h2>上衣 / 裤子</h2>
+    <div class="grid-img">
+      <img src="https://via.placeholder.com/400x500/eeeeee/666666&text=童装上衣裤子" alt="">
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>套装 / 连体衣</h2>
+    <div class="grid-img">
+      <img src="https://via.placeholder.com/400x500/eeeeee/666666&text=童装套装" alt="">
+    </div>
+  </div>
+
+  <a href="index.html" class="btn">返回咨询</a>
+</div>
+
+<footer>
+  <p>长春市人民广场重庆路498号</p>
+  <p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
+  <p>© 2026 JANBAN STUDIO</p>
+</footer>
+
+</body>
+</html>
