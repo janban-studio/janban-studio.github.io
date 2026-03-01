@@ -3,233 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>精品案例 | JANBAN STUDIO</title>
+<title>版型案例 | JANBAN STUDIO</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-    --text: #1D1D1F;
-    --text-secondary: #86868B;
-    --blue: #0071E3;
-    --bg: #fff;
-    --bg-alt: #F5F5F7;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: 'Inter', sans-serif;
-    color: var(--text);
-    background: var(--bg);
-}
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 44px;
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    z-index: 999;
-}
-.nav-container {
-    max-width: 1280px;
-    height: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.logo {
-    font-weight: 600;
-    font-size: 18px;
-    color: var(--text);
-    text-decoration: none;
-}
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
-.nav-links a {
-    font-size: 14px;
-    color: var(--text-secondary);
-    text-decoration: none;
-}
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--blue);
-}
-.section {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 24px;
-    text-align: center;
-}
-.title {
-    font-size: 56px;
-    margin-bottom: 16px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s;
-}
-.subtitle {
-    font-size: 24px;
-    color: var(--text-secondary);
-    margin-bottom: 40px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s 0.2s;
-}
-.case-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
-    gap: 30px;
-    max-width: 1100px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s 0.4s;
-}
-.case-item {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-.case-item img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
-}
-.case-info {
-    padding: 20px;
-    text-align: left;
-}
-.case-title {
-    font-size: 18px;
-    margin-bottom: 6px;
-}
-.case-desc {
-    font-size: 14px;
-    color: var(--text-secondary);
-}
-.buttons {
-    margin-top: 40px;
-    display: flex;
-    gap: 20px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s 0.6s;
-}
-.btn {
-    padding: 12px 24px;
-    border-radius: 24px;
-    text-decoration: none;
-    font-size: 17px;
-}
-.btn-primary {
-    background: var(--blue);
-    color: #fff;
-}
-.btn-outline {
-    border: 1px solid var(--blue);
-    color: var(--blue);
-}
-.visible .title,
-.visible .subtitle,
-.visible .case-grid,
-.visible .buttons {
-    opacity: 1;
-    transform: translateY(0);
-}
-footer {
-    background: var(--bg-alt);
-    padding: 50px 20px 30px;
-    text-align: center;
-    border-top: 1px solid #E6E6E6;
-}
-footer p {
-    font-size: 14px;
-    color: var(--text-secondary);
-}
-.copyright {
-    font-size: 12px;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #E6E6E6;
-}
-@media (max-width:768px) {
-    .title { font-size: 36px; }
-    .subtitle { font-size: 19px; }
-    .nav-links { display: none; }
-}
+:root {--text:#1D1D1F;--text-secondary:#86868B;--blue:#0071E3;--bg:#fff;--bg-alt:#F5F5F7;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family: 'Inter',sans-serif;background:var(--bg);color:var(--text);}
+.navbar{position:fixed;top:0;left:0;width:100%;height:44px;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.05);z-index:999;}
+.nav-container{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:100%;}
+.logo{font-weight:600;font-size:18px;color:var(--text);text-decoration:none;}
+.nav-links{display:flex;gap:24px;}
+.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none;}
+.nav-links a.active{color:var(--blue);font-weight:500;}
+
+.case-page{padding:120px 20px 60px;text-align:center;}
+.title{font-size:36px;font-weight:700;margin-bottom:10px;}
+.subtitle{font-size:18px;color:var(--text-secondary);margin-bottom:40px;}
+
+.grid{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;max-width:1000px;margin:0 auto;}
+.card{width:280px;background:#fff;border-radius:16px;padding:30px 20px;box-shadow:0 4px 15px rgba(0,0,0,0.05);text-decoration:none;color:inherit;transition:transform .2s;}
+.card:hover{transform:translateY(-4px);}
+.card h3{font-size:22px;margin-bottom:10px;}
+.card p{font-size:15px;color:var(--text-secondary);line-height:1.4;}
+
+footer{background:var(--bg-alt);padding:40px 20px;text-align:center;margin-top:60px;}
+footer p{font-size:14px;color:var(--text-secondary);margin-bottom:6px;}
 </style>
 </head>
 <body>
+
 <div class="navbar">
-<div class="nav-container">
+  <div class="nav-container">
     <a href="index.html" class="logo">JANBAN</a>
     <div class="nav-links">
-        <a href="index.html">首页</a>
-        <a href="cases.html" class="active">案例</a>
-        <a href="process.html">流程</a>
-        <a href="service-cad.html">CAD制版</a>
-        <a href="service-cloth.html">来图来样</a>
-        <a href="service-optimize.html">版型优化</a>
-        <a href="service-sample.html">样衣制作</a>
-        <a href="contact.html">联系我们</a>
+      <a href="index.html">首页</a>
+      <a href="cases.html" class="active">案例</a>
+      <a href="process.html">流程</a>
+      <a href="service-cad.html">CAD制版</a>
+      <a href="service-cloth.html">来图来样</a>
+      <a href="service-optimize.html">版型优化</a>
+      <a href="service-sample.html">样衣制作</a>
     </div>
-</div>
+  </div>
 </div>
 
-<section class="section">
-    <h1 class="title">精品案例</h1>
-    <p class="subtitle">上千款成功版型，只做能落地、能大货的专业纸样</p>
-    <div class="case-grid">
-        <div class="case-item">
-            <img src="case1.jpg" alt="新中式">
-            <div class="case-info">
-                <div class="case-title">新中式女装</div>
-                <div class="case-desc">传统元素+现代剪裁，显瘦高级</div>
-            </div>
-        </div>
-        <div class="case-item">
-            <img src="case2.jpg" alt="西装">
-            <div class="case-info">
-                <div class="case-title">高端商务西装</div>
-                <div class="case-desc">立体剪裁，专业挺括</div>
-            </div>
-        </div>
-        <div class="case-item">
-            <img src="case3.jpg" alt="羽绒服">
-            <div class="case-info">
-                <div class="case-title">轻量化羽绒服</div>
-                <div class="case-desc">不臃肿，保暖显瘦</div>
-            </div>
-        </div>
-    </div>
-    <div class="buttons">
-        <a href="contact.html" class="btn btn-primary">咨询同款</a>
-        <a href="index.html" class="btn btn-outline">返回首页</a>
-    </div>
-</section>
+<div class="case-page">
+  <h1 class="title">休闲服装版型库</h1>
+  <p class="subtitle">专注休闲男装·女装·童装，尤其擅长羽绒服</p>
+  <div class="grid">
+    <a href="men.html" class="card">
+      <h3>休闲男装</h3>
+      <p>T恤、卫衣、裤装、衬衫、外套、<strong>羽绒服（强项）</strong></p>
+    </a>
+    <a href="women.html" class="card">
+      <h3>休闲女装</h3>
+      <p>T恤、卫衣、裙装、裤装、外套、休闲套装</p>
+    </a>
+    <a href="kids.html" class="card">
+      <h3>休闲童装</h3>
+      <p>小童/中童上衣、裤子、套装、婴童连体衣</p>
+    </a>
+  </div>
+</div>
 
 <footer>
-<p>长春市人民广场重庆路498号</p>
-<p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
-<div class="copyright">© 2026 JANBAN STUDIO 保留所有权利</div>
+  <p>长春市人民广场重庆路498号</p>
+  <p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
+  <p>© 2026 JANBAN STUDIO</p>
 </footer>
 
-<script>
-document.querySelectorAll('.section').forEach(s=>{
-    new IntersectionObserver((e)=>{
-        e[0].isIntersecting&&s.classList.add('visible')
-    },{threshold:0.3}).observe(s)
-})
-</script>
 </body>
 </html>
