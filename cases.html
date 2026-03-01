@@ -153,7 +153,7 @@ body {
     color: var(--text-secondary);
 }
 
-/* 视频展示区（竖屏版） */
+/* 视频展示区（抖音嵌入版，竖屏） */
 .video-section {
     width: 100%;
     max-width: 800px;
@@ -172,7 +172,7 @@ body {
     margin: 0 auto;
     padding-top: 177.78%; /* 9:16 竖屏比例 */
 }
-.video-container video {
+.video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -288,14 +288,14 @@ footer p {
         </div>
     </div>
 
-    <!-- 视频展示区（竖屏版，已放入正确链接） -->
+    <!-- 视频展示区（抖音嵌入版，竖屏） -->
     <div class="video-section">
         <h2>版型制作过程</h2>
         <div class="video-container">
-            <video controls>
-                <source src="https://raw.githubusercontent.com/janban-studio/janban-studio.github.io/refs/heads/main/videos/demo.mp4" type="video/mp4">
-                您的浏览器不支持视频播放。
-            </video>
+            <iframe src="https://player.douyin.com/player/video?aid=0&client=douyin&did=0&iid=0&item_id=746812345678901234&refer=https%3A%2F%2Fv.douyin.com%2FE4EH9DYVtuM%2F&autoplay=0" 
+                    frameborder="0" 
+                    allowfullscreen>
+            </iframe>
         </div>
     </div>
 </section>
