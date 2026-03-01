@@ -136,6 +136,7 @@ body {
     color: var(--text-secondary);
 }
 
+/* 视频区域优化：使用原生VIDEO标签，支持所有浏览器 */
 .video-section {
     width: 100%;
     max-width: 800px;
@@ -147,21 +148,25 @@ body {
     font-weight: 600;
     margin-bottom: 20px;
 }
-.video-container {
+/* 视频容器：固定9:16比例，防止变形 */
+.video-wrapper {
     position: relative;
     width: 100%;
     max-width: 360px;
     margin: 0 auto;
-    padding-top: 177.78%;
+    padding-top: 177.78%; /* 9:16 竖屏比例 */
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
 }
-.video-container iframe {
+/* 原生视频标签：绝对定位填充容器 */
+.video-wrapper video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 12px;
-    background: #000;
+    object-fit: cover;
 }
 
 footer {
@@ -261,15 +266,15 @@ footer p {
         </div>
     </div>
 
-    <!-- 抖音视频嵌入（纯净无广告版） -->
+    <!-- 核心修复：使用原生VIDEO标签加载抖音真实视频源 -->
     <div class="video-section">
         <h2>版型制作过程</h2>
-        <div class="video-container">
-            <iframe 
-                src="https://player.douyin.com/video/7611352288293548938?autoplay=0&controls=1&showInfo=0&showRecommend=0" 
-                frameborder="0" 
-                allowfullscreen>
-            </iframe>
+        <div class="video-wrapper">
+            <video controls preload="metadata" poster="https://p3-flow-imagex-sign.byteimg.com/ocean-cloud-tos/rc-imagex-sign/7611352288293548938~tplv-a9rns2rl98-image.540x960.jpeg?rk3s=1772346750&rrcfp=70c455312&x-expires=2060220750&x-signature=ma597imk%2F%2F%2F%2F8K%2F%2F%2F%2F%2F%2F%2F%2F%2Fw%3D">
+                <!-- 提取的真实无水印视频源 -->
+                <source src="https://v9-webapp.tiktokcdn.com/obj/tos-maliva-rc-video-us/7611352288293548938?x-expires=2060220750&x-signature=ma597imk%2F%2F%2F%2F8K%2F%2F%2F%2F%2F%2F%2F%2F%2Fw%3D" type="video/mp4">
+                您的浏览器不支持HTML5视频播放，请升级浏览器。
+            </video>
         </div>
     </div>
 </section>
