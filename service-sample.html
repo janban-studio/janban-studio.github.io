@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>样衣制作 | JANBAN STUDIO</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300,400,500,600,700&display=swap" rel="stylesheet">
 <style>
 :root {
     --text: #1D1D1F;
@@ -52,7 +52,7 @@ body {
 }
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 24px;
 }
 .nav-links a {
     font-size: 14px;
@@ -60,55 +60,98 @@ body {
     text-decoration: none;
     transition: 0.2s;
 }
-.nav-links a:hover,
+.nav-links a:hover {
+    color: var(--blue);
+}
 .nav-links a.active {
     color: var(--blue);
     font-weight: 500;
 }
-.section {
+
+/* 页面主体 */
+.service-section {
     min-height: 100vh;
+    padding: 80px 24px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 80px 24px;
     text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+.service-section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 .title {
-    font-size: 56px;
-    font-weight: 600;
-    margin-bottom: 16px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
 }
 .subtitle {
-    font-size: 24px;
+    font-size: 21px;
+    line-height: 1.4;
     color: var(--text-secondary);
     max-width: 700px;
-    margin-bottom: 30px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s 0.2s;
+    margin-bottom: 40px;
 }
 .desc {
-    max-width: 700px;
-    text-align: left;
-    line-height: 1.8;
+    font-size: 18px;
     color: var(--text-secondary);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s 0.4s;
+    max-width: 800px;
+    margin-bottom: 40px;
+    text-align: left;
 }
+
+/* 优势列表 */
+.advantages {
+    max-width: 800px;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: left;
+}
+.advantage-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+.advantage-item .icon {
+    font-size: 24px;
+    color: var(--blue);
+}
+.advantage-item h4 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.advantage-item p {
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+/* 图片展示区 */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 40px;
+}
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
 .buttons {
-    margin-top: 40px;
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.8s 0.6s;
 }
 .btn {
     padding: 12px 24px;
@@ -116,32 +159,60 @@ body {
     font-size: 17px;
     font-weight: 500;
     text-decoration: none;
-    transition: 0.2s;
+    cursor: pointer;
 }
 .btn-primary {
     background: var(--blue);
     color: #fff;
-}
-.btn-primary:hover {
-    background: #0077ED;
+    border: none;
 }
 .btn-outline {
     border: 1px solid var(--blue);
     color: var(--blue);
 }
-.btn-outline:hover {
-    background: #f0f7ff;
+
+/* 弹窗样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
 }
-.visible .title,
-.visible .subtitle,
-.visible .desc,
-.visible .buttons {
-    opacity: 1;
-    transform: translateY(0);
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 320px;
 }
+.modal-content img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+}
+.modal-content p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+.close-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: var(--bg-alt);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
 footer {
     background: var(--bg-alt);
-    padding: 50px 20px 30px;
+    padding: 40px 20px;
     text-align: center;
     border-top: 1px solid #E6E6E6;
 }
@@ -156,6 +227,7 @@ footer p {
     padding-top: 20px;
     border-top: 1px solid #E6E6E6;
 }
+
 @media (max-width:768px) {
     .title { font-size: 36px; }
     .subtitle { font-size: 19px; }
@@ -164,7 +236,6 @@ footer p {
 </style>
 </head>
 <body>
-
 <div class="navbar">
 <div class="nav-container">
     <a href="index.html" class="logo">JANBAN</a>
@@ -176,43 +247,86 @@ footer p {
         <a href="service-cloth.html">来图来样</a>
         <a href="service-optimize.html">版型优化</a>
         <a href="service-sample.html" class="active">样衣制作</a>
-        <a href="contact.html">联系我们</a>
     </div>
 </div>
 </div>
 
-<section class="section">
+<section class="service-section">
     <h1 class="title">样衣制作</h1>
-    <p class="subtitle">纸样验证 · 试穿调整 · 拍摄样衣 · 一站式落地</p>
-    <div class="desc">
-        从纸样到成品样衣，全程精细制作，确保版型合身、工艺到位、效果达标。<br><br>
-        • 纸样验证与试穿调整，提前规避大货问题<br>
-        • 适合电商拍摄、展会展示、订货会、直播样衣<br>
-        • 支持小单快反，快速交付
+    <p class="subtitle">纸样验证·试穿调整·拍摄样衣·一站式落地</p>
+
+    <p class="desc">从纸样到成品样衣，全程精细制作，确保版型合身、工艺到位、效果达标。</p>
+
+    <div class="advantages">
+        <div class="advantage-item">
+            <div class="icon">✅</div>
+            <div>
+                <h4>纸样验证与试穿调整</h4>
+                <p>提前规避大货生产中可能出现的版型问题。</p>
+            </div>
+        </div>
+        <div class="advantage-item">
+            <div class="icon">📸</div>
+            <div>
+                <h4>适合电商拍摄、展会展示</h4>
+                <p>样衣可直接用于电商拍摄、展会展示、订货会等场景。</p>
+            </div>
+        </div>
+        <div class="advantage-item">
+            <div class="icon">⚡</div>
+            <div>
+                <h4>小单快反，快速交付</h4>
+                <p>支持小批量样衣制作，快速响应市场需求。</p>
+            </div>
+        </div>
     </div>
+
+    <!-- 图片展示区 -->
+    <div class="image-grid">
+        <img src="https://via.placeholder.com/400x500/eeeeee/666666&text=样衣1" alt="样衣1">
+        <img src="https://via.placeholder.com/400x500/eeeeee/666666&text=样衣2" alt="样衣2">
+    </div>
+
     <div class="buttons">
-        <a href="contact.html" class="btn btn-primary">立即定制</a>
+        <button onclick="openModal()" class="btn btn-primary">立即定制</button>
         <a href="index.html" class="btn btn-outline">返回首页</a>
     </div>
 </section>
 
+<!-- 二维码弹窗 -->
+<div id="qrcodeModal" class="modal">
+    <div class="modal-content">
+        <img src="https://raw.githubusercontent.com/janban-studio/janban-studio.github.io/refs/heads/main/images/mmqrcode1772330593333.png" alt="简版JANBAN沟通号贰">
+        <p>扫一扫上面的二维码图案，加我为朋友。</p>
+        <button class="close-btn" onclick="closeModal()">关闭</button>
+    </div>
+</div>
+
 <footer>
 <p>长春市人民广场重庆路498号</p>
 <p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
-<div class="copyright">© 2026 JANBAN STUDIO 保留所有权利</div>
+<div class="copyright">© 2026 JANBAN STUDIO</div>
 </footer>
 
 <script>
-const sections = document.querySelectorAll('.section');
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
+const sections = document.querySelectorAll('.service-section');
+const ob = new IntersectionObserver(es => {
+    es.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
 }, { threshold: 0.3 });
-sections.forEach(sec => observer.observe(sec));
-</script>
+sections.forEach(s => ob.observe(s));
 
+function openModal() {
+    document.getElementById('qrcodeModal').style.display = 'flex';
+}
+function closeModal() {
+    document.getElementById('qrcodeModal').style.display = 'none';
+}
+window.onclick = function(event) {
+    const modal = document.getElementById('qrcodeModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+</script>
 </body>
 </html>
