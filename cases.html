@@ -13,11 +13,7 @@
     --bg: #fff;
     --bg-alt: #F5F5F7;
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--text);
@@ -60,17 +56,14 @@ body {
     text-decoration: none;
     transition: 0.2s;
 }
-.nav-links a:hover {
-    color: var(--blue);
-}
-.nav-links a.active {
+.nav-links a:hover, .nav-links a.active {
     color: var(--blue);
     font-weight: 500;
 }
 
 .case-section {
     min-height: 100vh;
-    padding: 80px 24px;
+    padding: 80px 24px 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,17 +72,13 @@ body {
 .title {
     font-size: 48px;
     font-weight: 700;
-    line-height: 1.1;
     margin-bottom: 24px;
 }
 .subtitle {
     font-size: 21px;
-    line-height: 1.4;
     color: var(--text-secondary);
-    max-width: 700px;
     margin-bottom: 40px;
 }
-
 .main-cards {
     width: 100%;
     max-width: 800px;
@@ -110,11 +99,9 @@ body {
     margin-bottom: 12px;
 }
 .main-card p {
-    font-size: 16px;
     color: var(--text-secondary);
     margin-bottom: 20px;
 }
-
 .sub-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -167,7 +154,7 @@ body {
     margin: 0 auto;
     padding-top: 177.78%;
 }
-.video-container video {
+.video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -179,20 +166,14 @@ body {
 
 footer {
     background: var(--bg-alt);
-    padding: 40px 20px;
+    padding: 40px 24px;
     text-align: center;
-    border-top: 1px solid #E6E6E6;
+    border-top: 1px solid rgba(0,0,0,0.05);
 }
 footer p {
     font-size: 14px;
     color: var(--text-secondary);
     margin-bottom: 8px;
-}
-.copyright {
-    font-size: 12px;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid #E6E6E6;
 }
 
 @media (max-width:768px) {
@@ -204,18 +185,17 @@ footer p {
 </head>
 <body>
 <div class="navbar">
-<div class="nav-container">
-    <a href="index.html" class="logo">JANBAN</a>
-    <div class="nav-links">
-        <a href="index.html">首页</a>
-        <a href="cases.html" class="active">案例</a>
-        <a href="process.html">流程</a>
-        <a href="service-cad.html">CAD制版</a>
-        <a href="service-cloth.html">来图来样</a>
-        <a href="service-optimize.html">版型优化</a>
-        <a href="service-sample.html">样衣制作</a>
+    <div class="nav-container">
+        <a href="index.html" class="logo">JANBAN</a>
+        <div class="nav-links">
+            <a href="index.html">首页</a>
+            <a href="cases.html" class="active">案例</a>
+            <a href="service-cad.html">CAD制版</a>
+            <a href="service-cloth.html">来图来样</a>
+            <a href="service-optimize.html">版型优化</a>
+            <a href="service-sample.html">样衣制作</a>
+        </div>
     </div>
-</div>
 </div>
 
 <section class="case-section">
@@ -281,21 +261,22 @@ footer p {
         </div>
     </div>
 
+    <!-- 抖音视频嵌入区域（已替换为你的真实视频链接） -->
     <div class="video-section">
         <h2>版型制作过程</h2>
         <div class="video-container">
-            <video controls>
-                <source src="https://raw.githubusercontent.com/janban-studio/janban-studio.github.io/refs/heads/main/videos/demo.mp4" type="video/mp4">
-                您的浏览器不支持视频播放。
-            </video>
+            <iframe src="https://v.douyin.com/ISMs3Jk/" 
+                    frameborder="0" 
+                    allowfullscreen>
+            </iframe>
         </div>
     </div>
 </section>
 
 <footer>
-<p>长春市人民广场重庆路498号</p>
-<p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
-<div class="copyright">© 2026 JANBAN STUDIO</div>
+    <p>长春市人民广场重庆路498号 | JANBAN STUDIO</p>
+    <p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
+    <p>© 2026 JANBAN STUDIO 保留所有权利</p>
 </footer>
 </body>
 </html>
