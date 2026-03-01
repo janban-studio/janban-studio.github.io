@@ -3,112 +3,231 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>休闲男装 | JANBAN STUDIO</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>羽绒服（强项） | JANBAN STUDIO</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600,700&display=swap" rel="stylesheet">
 <style>
-:root {--text:#1D1D1F;--text-secondary:#86868B;--blue:#0071E3;--bg:#fff;--bg-alt:#F5F5F7;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);}
-.navbar{position:fixed;top:0;left:0;width:100%;height:44px;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.05);z-index:999;}
-.nav-container{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:100%;}
-.logo{font-weight:600;font-size:18px;color:var(--text);text-decoration:none;}
-.nav-links{display:flex;gap:24px;}
-.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none;}
-.nav-links a.active{color:var(--blue);font-weight:500;}
+:root {
+    --text: #1D1D1F;
+    --text-secondary: #86868B;
+    --blue: #0071E3;
+    --bg: #fff;
+    --bg-alt: #F5F5F7;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 999;
+}
+.nav-container {
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text);
+    text-decoration: none;
+}
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+.nav-links a {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: 0.2s;
+}
+.nav-links a:hover {
+    color: var(--blue);
+}
+.nav-links a.active {
+    color: var(--blue);
+    font-weight: 500;
+}
 
-.page{padding:120px 20px 80px;max-width:900px;margin:0 auto;text-align:center;}
-h1{font-size:34px;margin-bottom:10px;}
-.desc{color:var(--text-secondary);margin-bottom:40px;}
+.detail-section {
+    min-height: 100vh;
+    padding: 80px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+.detail-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.detail-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+.detail-subtitle {
+    font-size: 21px;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-bottom: 40px;
+}
 
-.sub-nav{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:50px;}
-.sub-nav a{padding:8px 14px;border-radius:20px;background:var(--bg-alt);color:var(--text-secondary);text-decoration:none;font-size:14px;}
-.sub-nav a.hot{background:#0071E3;color:#fff;}
+/* 图片预留位（多图网格） */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 40px;
+}
+.image-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
 
-.block{margin-bottom:60px;}
-.block h2{font-size:26px;margin-bottom:16px;}
-.block p{color:var(--text-secondary);margin-bottom:24px;}
-.grid-img{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
-.grid-img img{width:100%;border-radius:12px;}
+.buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.btn {
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 17px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn-primary {
+    background: var(--blue);
+    color: #fff;
+    border: none;
+}
+.btn-outline {
+    border: 1px solid var(--blue);
+    color: var(--blue);
+}
 
-.video-box{margin:50px 0;}
-.video-box h2{font-size:24px;margin-bottom:20px;}
-video{width:100%;max-width:600px;border-radius:12px;}
+footer {
+    background: var(--bg-alt);
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #E6E6E6;
+}
+footer p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+.copyright {
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #E6E6E6;
+}
 
-.btn{display:inline-block;padding:12px 28px;border-radius:24px;background:var(--blue);color:#fff;text-decoration:none;font-weight:500;margin-top:20px;}
-
-footer{background:var(--bg-alt);padding:40px 20px;text-align:center;}
-footer p{font-size:14px;color:var(--text-secondary);margin-bottom:6px;}
-
-@media(max-width:768px){.nav-links{display:none;}}
+@media (max-width:768px) {
+    .detail-title { font-size: 36px; }
+    .detail-subtitle { font-size: 19px; }
+    .nav-links { display: none; }
+}
 </style>
 </head>
 <body>
-
 <div class="navbar">
-  <div class="nav-container">
+<div class="nav-container">
     <a href="index.html" class="logo">JANBAN</a>
     <div class="nav-links">
-      <a href="index.html">首页</a>
-      <a href="cases.html">案例</a>
-      <a href="men.html" class="active">男装</a>
-      <a href="women.html">女装</a>
-      <a href="kids.html">童装</a>
+        <a href="index.html">首页</a>
+        <a href="cases.html" class="active">案例</a>
+        <a href="process.html">流程</a>
+        <a href="service-cad.html">CAD制版</a>
+        <a href="service-cloth.html">来图来样</a>
+        <a href="service-optimize.html">版型优化</a>
+        <a href="service-sample.html">样衣制作</a>
     </div>
-  </div>
+</div>
 </div>
 
-<div class="page">
-  <h1>休闲男装版型</h1>
-  <p class="desc">专业休闲男装，<strong>羽绒服是核心强项</strong></p>
+<section class="detail-section">
+    <h1 class="detail-title">❄️ 羽绒服（强项）</h1>
+    <p class="detail-subtitle">充绒量精准控制、防风保暖结构，可直接用于大货生产</p>
 
-  <div class="sub-nav">
-    <a href="#down" class="hot">羽绒服（强项）</a>
-    <a href="#tshirt">T恤</a>
-    <a href="#hoodie">卫衣</a>
-    <a href="#pants">裤装</a>
-    <a href="#shirt">衬衫</a>
-    <a href="#jacket">外套</a>
-  </div>
-
-  <div id="down" class="block">
-    <h2>❄️ 羽绒服（强项）</h2>
-    <p>充绒量精准控制、防风保暖结构、可直接大货生产</p>
-    <div class="grid-img">
-      <img src="https://via.placeholder.com/400x500/eeeeee/666666&text=羽绒服版型" alt="">
+    <!-- 多图预留位，你之后替换图片链接即可 -->
+    <div class="image-grid">
+        <img src="https://via.placeholder.com/400x500/eeeeee/666666&text=羽绒服版型1" alt="羽绒服版型1">
+        <img src="https://via.placeholder.com/400x500/eeeeee/666666&text=羽绒服版型2" alt="羽绒服版型2">
+        <img src="https://via.placeholder.com/400x500/eeeeee/666666&text=羽绒服版型3" alt="羽绒服版型3">
     </div>
-  </div>
 
-  <div id="hoodie" class="block">
-    <h2>连帽卫衣</h2>
-    <p>舒适百搭，版型稳定</p>
-    <div class="grid-img">
-      <img src="https://raw.githubusercontent.com/janban-studio/janban-studio.github.io/refs/heads/main/images/MEITU_20260301_003611434.jpg" alt="">
+    <div class="buttons">
+        <button onclick="openModal()" class="btn btn-primary">咨询同款</button>
+        <a href="cases.html" class="btn btn-outline">返回案例</a>
     </div>
-  </div>
-
-  <div id="tshirt" class="block">
-    <h2>T 恤 / 长袖T</h2>
-    <p>基础款版型，适合大批量生产</p>
-    <div class="grid-img">
-      <img src="https://via.placeholder.com/400x500/eeeeee/666666&text=T恤版型" alt="">
-    </div>
-  </div>
-
-  <div class="video-box">
-    <h2>版型制作视频</h2>
-    <video controls>
-      <source src="https://raw.githubusercontent.com/janban-studio/janban-studio.github.io/refs/heads/main/videos/demo.mp4" type="video/mp4">
-    </video>
-  </div>
-
-  <a href="index.html" class="btn">返回咨询</a>
-</div>
+</section>
 
 <footer>
-  <p>长春市人民广场重庆路498号</p>
-  <p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
-  <p>© 2026 JANBAN STUDIO</p>
+<p>长春市人民广场重庆路498号</p>
+<p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
+<div class="copyright">© 2026 JANBAN STUDIO 保留所有权利</div>
 </footer>
 
+<script>
+const sections = document.querySelectorAll('.detail-section');
+const ob = new IntersectionObserver(es=>{
+    es.forEach(e=>e.isIntersecting&&e.target.classList.add('visible'))
+},{threshold:0.3});
+sections.forEach(s=>ob.observe(s));
+
+function openModal() {
+    document.getElementById('qrcodeModal').style.display = 'flex';
+}
+function closeModal() {
+    document.getElementById('qrcodeModal').style.display = 'none';
+}
+window.onclick = function(event) {
+    const modal = document.getElementById('qrcodeModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+</script>
+
+<!-- 二维码弹窗（复用） -->
+<div id="qrcodeModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999; justify-content: center; align-items: center;">
+    <div class="modal-content" style="background: #fff; padding: 30px; border-radius: 16px; text-align: center; max-width: 320px;">
+        <img src="https://raw.githubusercontent.com/janban-studio/janban-studio.github.io/refs/heads/main/images/mmqrcode1772330593333.png" alt="简版JANBAN沟通号贰" style="width: 100%; height: auto; margin-bottom: 16px;">
+        <p style="color: var(--text-secondary); font-size: 14px;">扫一扫上面的二维码图案，加我为朋友。</p>
+        <button class="close-btn" onclick="closeModal()" style="margin-top: 20px; padding: 10px 20px; background: var(--bg-alt); border: none; border-radius: 20px; cursor: pointer;">关闭</button>
+    </div>
+</div>
 </body>
 </html>
