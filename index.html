@@ -80,18 +80,22 @@ body {
     position: relative;
     overflow: hidden;
 }
+/* 调整主标题：进一步缩小字号，让手机上能一行显示 */
 .title {
-    font-size: 56px;
-    font-weight: 600;
+    font-size: 36px; /* 从48px再调小 */
+    font-weight: 700;
+    line-height: 1.1;
     margin-bottom: 16px;
     opacity: 0;
     transform: translateY(20px);
     transition: 0.8s;
+    white-space: nowrap; /* 强制不换行 */
 }
 .subtitle {
-    font-size: 24px;
+    font-size: 21px;
+    line-height: 1.4;
     color: var(--text-secondary);
-    max-width: 700px;
+    max-width: 600px;
     margin-bottom: 32px;
     opacity: 0;
     transform: translateY(20px);
@@ -198,9 +202,16 @@ footer p {
     padding-top: 20px;
     border-top: 1px solid #E6E6E6;
 }
+/* 手机端再微调，确保一行显示 */
 @media (max-width:768px) {
-    .title { font-size: 36px; }
-    .subtitle { font-size: 19px; }
+    .title { 
+        font-size: 28px; /* 手机端再缩小 */
+        line-height: 1.2;
+    }
+    .subtitle { 
+        font-size: 19px; 
+        line-height: 1.5;
+    }
     .img-box { max-width: 100%; }
     .nav-links { display: none; }
 }
