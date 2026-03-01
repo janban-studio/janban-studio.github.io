@@ -4,131 +4,302 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>版型案例 | JANBAN STUDIO</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300,400,500,600,700&display=swap" rel="stylesheet">
 <style>
-:root {--text:#1D1D1F;--text-secondary:#86868B;--blue:#0071E3;--bg:#fff;--bg-alt:#F5F5F7;}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;}
-.navbar{position:fixed;top:0;left:0;width:100%;height:44px;background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.05);z-index:999;}
-.nav-container{max-width:1280px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:100%;}
-.logo{font-weight:600;font-size:18px;color:var(--text);text-decoration:none;}
-.nav-links{display:flex;gap:24px;}
-.nav-links a{font-size:14px;color:var(--text-secondary);text-decoration:none;transition:.2s;}
-.nav-links a:hover{color:var(--blue);}
-.nav-links a.active{color:var(--blue);font-weight:500;}
-.case-section{min-height:100vh;padding:80px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;transform:translateY(20px);transition:all .6s ease-out;}
-.case-section.visible{opacity:1;transform:translateY(0);}
-.title{font-size:48px;font-weight:700;margin-bottom:24px;}
-.subtitle{font-size:21px;color:var(--text-secondary);max-width:700px;margin-bottom:40px;}
-.main-cards{width:100%;max-width:800px;display:flex;flex-direction:column;gap:20px;margin-bottom:60px;}
-.main-card{background:#fff;border-radius:16px;padding:30px 24px;box-shadow:0 4px 20px rgba(0,0,0,0.05);}
-.main-card h3{font-size:28px;font-weight:600;margin-bottom:12px;}
-.main-card p{font-size:16px;color:var(--text-secondary);}
-.sub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin-top:20px;}
-.sub-item{background:var(--bg-alt);border-radius:12px;padding:16px;text-align:center;text-decoration:none;color:inherit;transition:transform .2s;}
-.sub-item:hover{transform:translateY(-4px);}
-.sub-item img{width:100%;height:auto;border-radius:8px;margin-bottom:8px;}
-.sub-item p{font-size:14px;color:var(--text-secondary);}
-.video-section{width:100%;max-width:800px;margin:60px 0;text-align:center;}
-.video-section h2{font-size:28px;font-weight:600;margin-bottom:20px;}
-video{width:100%;max-width:600px;border-radius:12px;}
-footer{background:var(--bg-alt);padding:40px 20px;text-align:center;border-top:1px solid #E6E6E6;}
-footer p{font-size:14px;color:var(--text-secondary);margin-bottom:8px;}
-.copyright{font-size:12px;margin-top:20px;padding-top:20px;border-top:1px solid #E6E6E6;}
-@media(max-width:768px){.title{font-size:36px;}.subtitle{font-size:19px;}.nav-links{display:none;}}
+:root {
+    --text: #1D1D1F;
+    --text-secondary: #86868B;
+    --blue: #0071E3;
+    --bg: #fff;
+    --bg-alt: #F5F5F7;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 44px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 999;
+}
+.nav-container {
+    max-width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--text);
+    text-decoration: none;
+}
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+.nav-links a {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: 0.2s;
+}
+.nav-links a:hover {
+    color: var(--blue);
+}
+.nav-links a.active {
+    color: var(--blue);
+    font-weight: 500;
+}
+
+/* 页面主体 */
+.case-section {
+    min-height: 100vh;
+    padding: 80px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+.case-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+.subtitle {
+    font-size: 21px;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+/* 三大分类卡片 */
+.main-cards {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 60px;
+}
+.main-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 24px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.main-card h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.main-card p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+/* 细分品类图片区 */
+.sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+}
+.sub-item {
+    background: var(--bg-alt);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s;
+}
+.sub-item:hover {
+    transform: translateY(-4px);
+}
+.sub-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+.sub-item p {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* 视频展示区 */
+.video-section {
+    width: 100%;
+    max-width: 800px;
+    margin: 60px 0;
+    text-align: center;
+}
+.video-section h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+video {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+}
+
+footer {
+    background: var(--bg-alt);
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #E6E6E6;
+}
+footer p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+.copyright {
+    font-size: 12px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #E6E6E6;
+}
+
+@media (max-width:768px) {
+    .title { font-size: 36px; }
+    .subtitle { font-size: 19px; }
+    .nav-links { display: none; }
+}
 </style>
 </head>
 <body>
 <div class="navbar">
 <div class="nav-container">
-<a href="index.html" class="logo">JANBAN</a>
-<div class="nav-links">
-<a href="index.html">首页</a>
-<a href="cases.html" class="active">案例</a>
-<a href="process.html">流程</a>
-<a href="service-cad.html">CAD制版</a>
-<a href="service-cloth.html">来图来样</a>
-<a href="service-optimize.html">版型优化</a>
-<a href="service-sample.html">样衣制作</a>
+    <a href="index.html" class="logo">JANBAN</a>
+    <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="cases.html" class="active">案例</a>
+        <a href="process.html">流程</a>
+        <a href="service-cad.html">CAD制版</a>
+        <a href="service-cloth.html">来图来样</a>
+        <a href="service-optimize.html">版型优化</a>
+        <a href="service-sample.html">样衣制作</a>
+    </div>
 </div>
 </div>
-</div>
+
 <section class="case-section">
-<h1 class="title">休闲服装版型库</h1>
-<p class="subtitle">专注休闲男装·女装·童装，尤其擅长羽绒服</p>
-<div class="main-cards">
-<div class="main-card">
-<h3>休闲男装</h3>
-<p>T恤、卫衣、裤装、衬衫、外套、羽绒服（强项）</p>
-<div class="sub-grid">
-<a href="men-down.html" class="sub-item">
-<img src="https://via.placeholder.com/300/eeeeee/666666&text=羽绒服" alt="羽绒服">
-<p>羽绒服（强项）</p>
-</a>
-<a href="men-hoodie.html" class="sub-item">
-<img src="https://via.placeholder.com/300/eeeeee/666666&text=卫衣" alt="卫衣">
-<p>连帽卫衣</p>
-</a>
-<a href="men-tshirt.html" class="sub-item">
-<img src="https://via.placeholder.com/300/eeeeee/666666&text=T恤" alt="T恤">
-<p>T恤/长袖T</p>
-</a>
-<a href="men-pants.html" class="sub-item">
-<img src="https://via.placeholder.com/300/eeeeee/666666&text=裤装" alt="裤装">
-<p>休闲裤/卫裤</p>
-</a>
-</div>
-</div>
-<div class="main-card">
-<h3>休闲女装</h3>
-<p>T恤、卫衣、裙装、裤装、外套、套装</p>
-<div class="sub-grid">
-<a href="women-tshirt.html" class="sub-item">
-<img src="https://via.placeholder.com/300/eeeeee/666666&text=女T恤" alt="女T恤">
-<p>T恤/卫衣</p>
-</a>
-<a href="women-dress.html" class="sub-item">
-<img src="https://via.placeholder.com/300/eeeeee/666666&text=裙装" alt="裙装">
-<p>裙装/裤装</p>
-</a>
-<a href="women-set.html" class="sub-item">
-<img src="https://via.placeholder.com/300/eeeeee/666666&text=套装" alt="套装">
-<p>休闲套装</p>
-</a>
-</div>
-</div>
-<div class="main-card">
-<h3>休闲童装</h3>
-<p>上衣、裤子、套装、婴童连体衣</p>
-<div class="sub-grid">
-<a href="kids-top.html" class="sub-item">
-<img src="https://via.placeholder.com/300/eeeeee/666666&text=童装上衣" alt="童装上衣">
-<p>上衣/裤子</p>
-</a>
-<a href="kids-set.html" class="sub-item">
-<img src="https://via.placeholder.com/300/eeeeee/666666&text=童装套装" alt="童装套装">
-<p>套装/连体衣</p>
-</a>
-</div>
-</div>
-</div>
-<div class="video-section">
-<h2>版型制作过程</h2>
-<video controls>
-<source src="videos/demo.mp4" type="video/mp4">
-您的浏览器不支持视频播放。
-</video>
-</div>
+    <h1 class="title">休闲服装版型库</h1>
+    <p class="subtitle">专注休闲男装·女装·童装，尤其擅长羽绒服</p>
+
+    <div class="main-cards">
+        <!-- 休闲男装 -->
+        <div class="main-card">
+            <h3>休闲男装</h3>
+            <p>T恤、卫衣、裤装、衬衫、外套、羽绒服（强项）</p>
+            <div class="sub-grid">
+                <a href="men-down.html" class="sub-item">
+                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=羽绒服" alt="羽绒服">
+                    <p>羽绒服）</p>
+                </a>
+                <a href="men-hoodie.html" class="sub-item">
+                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=卫衣" alt="卫衣">
+                    <p>连帽卫衣</p>
+                </a>
+                <a href="men-tshirt.html" class="sub-item">
+                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=T恤" alt="T恤">
+                    <p>T恤/长袖T</p>
+                </a>
+                <a href="men-pants.html" class="sub-item">
+                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=裤装" alt="裤装">
+                    <p>休闲裤/卫裤</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 休闲女装 -->
+        <div class="main-card">
+            <h3>休闲女装</h3>
+            <p>T恤、卫衣、裙装、裤装、外套、休闲套装</p>
+            <div class="sub-grid">
+                <a href="women-tshirt.html" class="sub-item">
+                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=女T恤" alt="女T恤">
+                    <p>T恤/卫衣</p>
+                </a>
+                <a href="women-dress.html" class="sub-item">
+                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=裙装" alt="裙装">
+                    <p>裙装/裤装</p>
+                </a>
+                <a href="women-set.html" class="sub-item">
+                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=套装" alt="套装">
+                    <p>休闲套装</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 休闲童装 -->
+        <div class="main-card">
+            <h3>休闲童装</h3>
+            <p>上衣、裤子、套装、婴童连体衣</p>
+            <div class="sub-grid">
+                <a href="kids-top.html" class="sub-item">
+                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=童装上衣" alt="童装上衣">
+                    <p>上衣/裤子</p>
+                </a>
+                <a href="kids-set.html" class="sub-item">
+                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=童装套装" alt="童装套装">
+                    <p>套装/连体衣</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 视频展示区（已放入正确链接） -->
+    <div class="video-section">
+        <h2>版型制作过程</h2>
+        <video controls>
+            <source src="https://raw.githubusercontent.com/janban-studio/janban-studio.github.io/refs/heads/main/videos/demo.mp4" type="video/mp4">
+            您的浏览器不支持视频播放。
+        </video>
+    </div>
 </section>
+
 <footer>
 <p>长春市人民广场重庆路498号</p>
 <p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
 <div class="copyright">© 2026 JANBAN STUDIO</div>
 </footer>
+
 <script>
-const sections=document.querySelectorAll('.case-section');
-const ob=new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting&&e.target.classList.add('visible'))},{threshold:0.3});
-sections.forEach(s=>ob.observe(s));
+const sections = document.querySelectorAll('.case-section');
+const ob = new IntersectionObserver(es => {
+    es.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
+}, { threshold: 0.3 });
+sections.forEach(s => ob.observe(s));
 </script>
 </body>
 </html>
