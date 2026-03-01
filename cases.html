@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>版型案例 | JANBAN STUDIO</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300,400,500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
     --text: #1D1D1F;
@@ -68,7 +68,6 @@ body {
     font-weight: 500;
 }
 
-/* 页面主体 */
 .case-section {
     min-height: 100vh;
     padding: 80px 24px;
@@ -76,13 +75,6 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-}
-.case-section.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 .title {
     font-size: 48px;
@@ -98,7 +90,6 @@ body {
     margin-bottom: 40px;
 }
 
-/* 三大分类卡片 */
 .main-cards {
     width: 100%;
     max-width: 800px;
@@ -124,7 +115,6 @@ body {
     margin-bottom: 20px;
 }
 
-/* 细分品类图片区 */
 .sub-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
@@ -142,10 +132,16 @@ body {
 .sub-item:hover {
     transform: translateY(-4px);
 }
-.sub-item img {
+.sub-item .placeholder {
     width: 100%;
-    height: auto;
+    height: 120px;
     border-radius: 8px;
+    background: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 14px;
     margin-bottom: 8px;
 }
 .sub-item p {
@@ -153,7 +149,6 @@ body {
     color: var(--text-secondary);
 }
 
-/* 视频展示区（抖音嵌入版，竖屏） */
 .video-section {
     width: 100%;
     max-width: 800px;
@@ -170,15 +165,16 @@ body {
     width: 100%;
     max-width: 360px;
     margin: 0 auto;
-    padding-top: 177.78%; /* 9:16 竖屏比例 */
+    padding-top: 177.78%;
 }
-.video-container iframe {
+.video-container video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border-radius: 12px;
+    background: #000;
 }
 
 footer {
@@ -227,75 +223,71 @@ footer p {
     <p class="subtitle">专注休闲男装·女装·童装，尤其擅长羽绒服</p>
 
     <div class="main-cards">
-        <!-- 休闲男装 -->
         <div class="main-card">
             <h3>休闲男装</h3>
             <p>T恤、卫衣、裤装、衬衫、外套、羽绒服（强项）</p>
             <div class="sub-grid">
                 <a href="men-down.html" class="sub-item">
-                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=羽绒服" alt="羽绒服">
+                    <div class="placeholder">羽绒服</div>
                     <p>羽绒服（强项）</p>
                 </a>
                 <a href="men-hoodie.html" class="sub-item">
-                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=卫衣" alt="卫衣">
+                    <div class="placeholder">卫衣</div>
                     <p>连帽卫衣</p>
                 </a>
                 <a href="men-tshirt.html" class="sub-item">
-                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=T恤" alt="T恤">
+                    <div class="placeholder">T恤</div>
                     <p>T恤/长袖T</p>
                 </a>
                 <a href="men-pants.html" class="sub-item">
-                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=裤装" alt="裤装">
+                    <div class="placeholder">裤装</div>
                     <p>休闲裤/卫裤</p>
                 </a>
             </div>
         </div>
 
-        <!-- 休闲女装 -->
         <div class="main-card">
             <h3>休闲女装</h3>
             <p>T恤、卫衣、裙装、裤装、外套、休闲套装</p>
             <div class="sub-grid">
                 <a href="women-tshirt.html" class="sub-item">
-                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=女T恤" alt="女T恤">
+                    <div class="placeholder">女T恤</div>
                     <p>T恤/卫衣</p>
                 </a>
                 <a href="women-dress.html" class="sub-item">
-                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=裙装" alt="裙装">
+                    <div class="placeholder">裙装</div>
                     <p>裙装/裤装</p>
                 </a>
                 <a href="women-set.html" class="sub-item">
-                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=套装" alt="套装">
+                    <div class="placeholder">套装</div>
                     <p>休闲套装</p>
                 </a>
             </div>
         </div>
 
-        <!-- 休闲童装 -->
         <div class="main-card">
             <h3>休闲童装</h3>
             <p>上衣、裤子、套装、婴童连体衣</p>
             <div class="sub-grid">
                 <a href="kids-top.html" class="sub-item">
-                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=童装上衣" alt="童装上衣">
+                    <div class="placeholder">童装上衣</div>
                     <p>上衣/裤子</p>
                 </a>
                 <a href="kids-set.html" class="sub-item">
-                    <img src="https://via.placeholder.com/300x300/eeeeee/666666&text=童装套装" alt="童装套装">
+                    <div class="placeholder">童装套装</div>
                     <p>套装/连体衣</p>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- 视频展示区（抖音嵌入版，竖屏） -->
     <div class="video-section">
         <h2>版型制作过程</h2>
         <div class="video-container">
-            <iframe src="https://player.douyin.com/player/video?aid=0&client=douyin&did=0&iid=0&item_id=746812345678901234&refer=https%3A%2F%2Fv.douyin.com%2FE4EH9DYVtuM%2F&autoplay=0" 
-                    frameborder="0" 
-                    allowfullscreen>
-            </iframe>
+            <video controls>
+                <source src="https://raw.githubusercontent.com/janban-studio/janban-studio.github.io/refs/heads/main/videos/demo.mp4" type="video/mp4">
+                您的浏览器不支持视频播放。
+            </video>
         </div>
     </div>
 </section>
@@ -305,13 +297,5 @@ footer p {
 <p>微信：JANBAN888 | 邮箱：janban_studio@163.com</p>
 <div class="copyright">© 2026 JANBAN STUDIO</div>
 </footer>
-
-<script>
-const sections = document.querySelectorAll('.case-section');
-const ob = new IntersectionObserver(es => {
-    es.forEach(e => e.isIntersecting && e.target.classList.add('visible'));
-}, { threshold: 0.3 });
-sections.forEach(s => ob.observe(s));
-</script>
 </body>
 </html>
